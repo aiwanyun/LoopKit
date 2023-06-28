@@ -194,7 +194,7 @@ extension TherapySettingsView {
         guard let prescription = viewModel.prescription else {
             return ""
         }
-        return String(format: LocalizedString("Submitted by %1$@, %2$@", comment: "Format for prescription descriptive text (1: providerName, 2: datePrescribed)"),
+        return String(format: LocalizedString("%1$@、%2$@ 提交", comment: "Format for prescription descriptive text (1: providerName, 2: datePrescribed)"),
                       prescription.providerName,
                       DateFormatter.localizedString(from: prescription.datePrescribed, dateStyle: .short, timeStyle: .none))
     }

@@ -60,7 +60,7 @@ public struct LabeledNumberInput: View {
                     shouldBecomeFirstResponder: true,
                     isDismissible: false
                 )
-                .accessibility(label: Text(String(format: LocalizedString("Enter %1$@ value", comment: "Format string for accessibility label for value entry. (1: value label)"), label)))
+                .accessibility(label: Text(String(format: LocalizedString("输入%1$@值", comment: "Format string for accessibility label for value entry. (1: value label)"), label)))
                 Text(self.label)
                     .font(.footnote)
                     .multilineTextAlignment(.leading)

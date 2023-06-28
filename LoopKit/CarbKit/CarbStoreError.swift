@@ -11,7 +11,7 @@ extension CarbStore.CarbStoreError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .unauthorized:
-            return LocalizedString("com.loudnate.carbkit.deletecarbentryunownederrordescription", value: "Authorization Denied", comment: "The description of an error returned when attempting to delete a sample not shared by the current app")
+            return LocalizedString("com.loudnate.CarbKit.deleteCarbEntryUnownedErrorDescription", value: "Authorization Denied", comment: "The description of an error returned when attempting to delete a sample not shared by the current app")
         case .notConfigured:
             return nil
         case .healthStoreError(let error):
@@ -26,7 +26,7 @@ extension CarbStore.CarbStoreError: LocalizedError {
     public var recoverySuggestion: String? {
         switch self {
         case .unauthorized:
-            return LocalizedString("com.loudnate.carbkit.sharingdeniederrecoverysuggestion", value: "This sample can be deleted from the Health app", comment: "The error recovery suggestion when attempting to delete a sample not shared by the current app")
+            return LocalizedString("com.loudnate.carbKit.sharingDeniedErrorRecoverySuggestion", value: "This sample can be deleted from the Health app", comment: "The error recovery suggestion when attempting to delete a sample not shared by the current app")
         case .notConfigured:
             return nil
         case .healthStoreError:

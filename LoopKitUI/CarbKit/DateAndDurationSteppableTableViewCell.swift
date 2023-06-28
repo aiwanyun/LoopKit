@@ -29,14 +29,14 @@ public class DateAndDurationSteppableTableViewCell: DatePickerTableViewCell {
     @IBOutlet weak var incrementButton: UIButton! {
         didSet {
             guard let formattedTimeStepSize = timeFormatter.string(from: timeStepSize) else { return }
-            incrementButton.accessibilityLabel = String(format: LocalizedString("Increase time by %1$@", comment: "Accessibility label for button to increase time (1: step size)"), formattedTimeStepSize)
+            incrementButton.accessibilityLabel = String(format: LocalizedString("将时间增加%1$@", comment: "Accessibility label for button to increase time (1: step size)"), formattedTimeStepSize)
         }
     }
 
     @IBOutlet weak var decrementButton: UIButton! {
         didSet {
             guard let formattedTimeStepSize = timeFormatter.string(from: timeStepSize) else { return }
-            decrementButton.accessibilityLabel = String(format: LocalizedString("Decrease time by %1$@", comment: "Accessibility label for button to decrease time (1: step size)"), formattedTimeStepSize)
+            decrementButton.accessibilityLabel = String(format: LocalizedString("将时间减少 %1$@", comment: "Accessibility label for button to decrease time (1: step size)"), formattedTimeStepSize)
         }
     }
 

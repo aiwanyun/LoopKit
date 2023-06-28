@@ -81,7 +81,7 @@ fileprivate extension TherapySetting {
                                upperBoundString: Guardrail.premealCorrectionRangeMaximum.bothUnitsString)
         case .workoutCorrectionRangeOverride:
             return lowHighText(
-                lowerBoundString: String(format: LocalizedString("%1$@ or your Glucose Safety Limit, whichever is higher", comment: "Lower bound workout information text format (1: app name)"), Guardrail.unconstrainedWorkoutCorrectionRange.absoluteBounds.lowerBound.bothUnitsString),
+                lowerBoundString: String(format: LocalizedString("%1$@ 或您的血糖安全限值，以较高者为准", comment: "Lower bound workout information text format (1: app name)"), Guardrail.unconstrainedWorkoutCorrectionRange.absoluteBounds.lowerBound.bothUnitsString),
                 upperBoundString: Guardrail.unconstrainedWorkoutCorrectionRange.absoluteBounds.upperBound.bothUnitsString)
         case .suspendThreshold:
             return lowHighText(for: Guardrail.suspendThreshold)
@@ -96,7 +96,7 @@ fileprivate extension TherapySetting {
     }
 
     func lowHighText(lowerBoundString: String, upperBoundString: String) -> String {
-        return String(format: LocalizedString("It can be set as low as %1$@. It can be set as high as %2$@.",
+        return String(format: LocalizedString("它可以设置为低至 %1$@。 它可以设置为高达%2$@。",
                                               comment: "Guardrail info text format"), lowerBoundString, upperBoundString)
     }
 }

@@ -139,12 +139,12 @@ final class InsulinSensitivityScalingTableViewCell: UITableViewCell {
         let delta = selectedPercentage - 100
         if delta < 0 {
             footerText = String(
-                format: LocalizedString("Basal, bolus, and correction insulin dose amounts are decreased by %@%%.", comment: "Describes a percentage decrease in overall insulin needs"),
+                format: LocalizedString("基础、推注和校正胰岛素剂量减少%@%%。", comment: "Describes a percentage decrease in overall insulin needs"),
                 String(abs(delta))
             )
         } else if delta > 0 {
             footerText = String(
-                format: LocalizedString("Basal, bolus, and correction insulin dose amounts are increased by %@%%.", comment: "Describes a percentage increase in overall insulin needs"),
+                format: LocalizedString("基础、推注和校正胰岛素剂量增加%@%%。", comment: "Describes a percentage increase in overall insulin needs"),
                 String(delta)
             )
         } else {

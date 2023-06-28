@@ -50,13 +50,13 @@ public struct CorrectionRangeOverrideInformationView: View {
         switch preset {
         case .preMeal:
             return VStack(alignment: .leading, spacing: 20) {
-                Text(String(format: LocalizedString("Your Pre-Meal Range should be the glucose value (or range of values) you want %1$@ to target by the time you take your first bite of your meal. This range will be in effect when you activate the Pre-Meal Preset button.", comment: "Information about pre-meal range format (1: app name)"), appName))
+                Text(String(format: LocalizedString("您的餐前范围应该是您在吃第一口饭时希望 %1$@ 达到的目标血糖值（或值范围）。 当您激活餐前预设按钮时，该范围将生效。", comment: "Information about pre-meal range format (1: app name)"), appName))
                 Text(LocalizedString("这通常是", comment: "Information about pre-meal range relative to correction range")) + Text(LocalizedString("降低", comment: "Information about pre-meal range relative to correction range")).bold().italic() + Text(LocalizedString("比您的更正范围。", comment: "Information about pre-meal range relative to correction range"))
             }
             .fixedSize(horizontal: false, vertical: true) // prevent text from being cut off
         case .workout:
             return VStack(alignment: .leading, spacing: 20) {
-                Text(String(format: LocalizedString("Workout Range is the glucose value or range of values you want %1$@ to target during activity. This range will be in effect when you activate the Workout Preset button.", comment: "Information about workout range format (1: app name)"), appName))
+                Text(String(format: LocalizedString("锻炼范围是您希望 %1$@ 在活动期间达到的目标葡萄糖值或值范围。 当您激活“锻炼预设”按钮时，该范围将生效。", comment: "Information about workout range format (1: app name)"), appName))
                 Text(LocalizedString("这通常是", comment: "Information about workout range relative to correction range")) + Text(LocalizedString("更高", comment: "Information about workout range relative to correction range")).bold().italic() + Text(LocalizedString("比您的更正范围。", comment: "Information about workout range relative to correction range"))
             }
             .fixedSize(horizontal: false, vertical: true) // prevent text from being cut off

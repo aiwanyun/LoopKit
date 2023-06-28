@@ -266,7 +266,7 @@ public final class LegacyInsulinDeliveryTableViewController: UITableViewControll
                         self.iobDateLabel.text = nil
                     case .success(let iob):
                         self.iobValueLabel.text = self.iobNumberFormatter.string(from: iob.value)
-                        self.iobDateLabel.text = String(format: LocalizedString("com.loudnate.insulinkit.iobdatelabel", value: "at %1$@", comment: "The format string describing the date of an IOB value. The first format argument is the localized date."), self.timeFormatter.string(from: iob.startDate))
+                        self.iobDateLabel.text = String(format: LocalizedString("com.loudnate.InsulinKit.IOBDateLabel", value: "at %1$@", comment: "The format string describing the date of an IOB value. The first format argument is the localized date."), self.timeFormatter.string(from: iob.startDate))
                     }
                 }
             }
@@ -285,7 +285,7 @@ public final class LegacyInsulinDeliveryTableViewController: UITableViewControll
                         self.totalDateLabel.text = nil
                     case .success(let result):
                         self.totalValueLabel.text = NumberFormatter.localizedString(from: NSNumber(value: result.value), number: .none)
-                        self.totalDateLabel.text = String(format: LocalizedString("com.loudnate.insulinkit.totaldatelabel", value: "since %1$@", comment: "The format string describing the starting date of a total value. The first format argument is the localized date."), DateFormatter.localizedString(from: result.startDate, dateStyle: .none, timeStyle: .short))
+                        self.totalDateLabel.text = String(format: LocalizedString("com.loudnate.InsulinKit.totalDateLabel", value: "since %1$@", comment: "The format string describing the starting date of a total value. The first format argument is the localized date."), DateFormatter.localizedString(from: result.startDate, dateStyle: .none, timeStyle: .short))
                     }
                 }
             }
@@ -512,7 +512,7 @@ extension DoseEntry {
             if let deliveredUnits = deliveredUnits,
                deliveredUnits != programmedUnits
             {
-                description = String(format: LocalizedString("Interrupted %1$@: <b>%2$@</b> of %3$@ %4$@", comment: "Description of an interrupted bolus dose entry (1: title for dose type, 2: value (? if no value) in bold, 3: programmed value (? if no value), 4: unit)"), type.localizedDescription, numberFormatter.string(from: deliveredUnits) ?? "?", numberFormatter.string(from: programmedUnits) ?? "?", DoseEntry.units.shortLocalizedUnitString())
+                description = String(format: LocalizedString("已中断 %1$@: <b>%2$@</b> of %3$@ %4$@", comment: "Description of an interrupted bolus dose entry (1: title for dose type, 2: value (? if no value) in bold, 3: programmed value (? if no value), 4: unit)"), type.localizedDescription, numberFormatter.string(from: deliveredUnits) ?? "?", numberFormatter.string(from: programmedUnits) ?? "?", DoseEntry.units.shortLocalizedUnitString())
             } else {
                 description = String(format: LocalizedString("%1$@: <b>%2$@</b> %3$@", comment: "Description of a bolus dose entry (1: title for dose type, 2: value (? if no value) in bold, 3: unit)"), type.localizedDescription, numberFormatter.string(from: programmedUnits) ?? "?", DoseEntry.units.shortLocalizedUnitString())
             }

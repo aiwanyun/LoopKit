@@ -88,18 +88,18 @@ extension MockSupport {
         if firstAlert {
             alertContent = Alert.Content(title: versionUpdate.localizedDescription,
                                          body: String(format: LocalizedString("""
-                                                    Your %1$@ app is out of date. It will continue to work, but we recommend updating to the latest version.
+                                                     您的 %1$@ 应用程序已过时。 它将继续工作，但我们建议更新到最新版本。
                                                     
-                                                    Go to %2$@ Settings > Software Update to complete.
+                                                     转至 %2$@ 设置 > 软件更新以完成。
                                                     """, comment: "Alert content body for first software update alert (1: app name)(2: app name)"), appName, appName),
                                          acknowledgeActionButtonLabel: LocalizedString("好的", comment: "Default acknowledgement"))
         } else if let lastVersionCheckAlertDate = lastVersionCheckAlertDate,
                   abs(lastVersionCheckAlertDate.timeIntervalSinceNow) > alertCadence {
             alertContent = Alert.Content(title: LocalizedString("更新提醒", comment: "Recurring software update alert title"),
                                          body: String(format: LocalizedString("""
-                                                    A software update is recommended to continue using the %1$@ app.
+                                                     建议进行软件更新以继续使用 %1$@ 应用程序。
                                                     
-                                                    Go to %2$@ Settings > Software Update to install the latest version.
+                                                     转至 %2$@ 设置 > 软件更新以安装最新版本。
                                                     """, comment: "Alert content body for recurring software update alert"), appName, appName),
                                          acknowledgeActionButtonLabel: LocalizedString("好的", comment: "Default acknowledgement"))
         } else {
@@ -151,7 +151,7 @@ struct SupportMenuItem : View {
         Button(action: {
             self.showActionSheet.toggle()
         }) {
-            Text("Mock Version Check \(currentVersionUpdate)")
+            Text("模拟版本检查 \(currentVersionUpdate)")
         }
         .actionSheet(isPresented: $showActionSheet, content: {
             self.actionSheet

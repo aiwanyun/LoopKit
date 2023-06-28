@@ -35,7 +35,7 @@ public struct BasalRatesInformationView: View {
     private var text: some View {
         VStack(alignment: .leading, spacing: 25) {
             Text(LocalizedString("您的基础胰岛素速率是您要使用的单位数量来满足背景胰岛素需求。", comment: "Information about basal rates"))
-            Text(String(format: LocalizedString("%1$@ supports 1 to %2$@ rates per day.", comment: "Information about max number of basal rates (1: app name) (2: maximum schedule entry count)"), appName, String(describing: maximumScheduleEntryCount)))
+            Text(String(format: LocalizedString("%1$@ 支持每天 1 至 %2$@ 费率。", comment: "Information about max number of basal rates (1: app name) (2: maximum schedule entry count)"), appName, String(describing: maximumScheduleEntryCount)))
             Text(LocalizedString("时间表从午夜开始，不能包含0 u/hr的速率。", comment: "Information about basal rate scheduling"))
         }
         .foregroundColor(.secondary)

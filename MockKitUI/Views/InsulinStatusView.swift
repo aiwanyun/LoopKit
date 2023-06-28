@@ -71,7 +71,7 @@ struct InsulinStatusView: View {
                 .font(.system(size: 34))
                 .fixedSize()
                 .foregroundColor(guidanceColors.warning)
-            Text("Insulin\nSuspended")
+            Text("胰岛素\n暂停")
                 .font(.system(size: 14, weight: .heavy, design: .default))
                 .lineSpacing(0.01)
                 .fixedSize()
@@ -99,9 +99,9 @@ struct InsulinStatusView: View {
                 }
                 Group {
                     if viewModel.isScheduledBasal {
-                        Text("Scheduled\(String.nonBreakingSpace)Basal")
+                        Text("预定\(String.nonBreakingSpace)基础率")
                     } else if viewModel.isTempBasal {
-                        Text("Temporary\(String.nonBreakingSpace)Basal")
+                        Text("零时\(String.nonBreakingSpace)基础率")
                     }
                 }
                 .font(.footnote)
@@ -116,7 +116,7 @@ struct InsulinStatusView: View {
                 .font(.system(size: 34))
                 .fixedSize()
                 .foregroundColor(guidanceColors.critical)
-            Text("No\nDelivery")
+            Text("没有\n送货")
                 .font(.system(size: 16, weight: .heavy, design: .default))
                 .lineSpacing(0.01)
                 .fixedSize()
@@ -134,7 +134,7 @@ struct InsulinStatusView: View {
     var reservoirStatus: some View {
         VStack(alignment: .trailing) {
             VStack(alignment: .leading, spacing: reservoirStatusSpacing) {
-                Text("Insulin\(String.nonBreakingSpace)Remaining")
+                Text("胰岛素\(String.nonBreakingSpace)剩余")
                     .foregroundColor(Color(UIColor.secondaryLabel))
                 HStack {
                     reservoirLevelStatus

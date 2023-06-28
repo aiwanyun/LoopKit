@@ -240,7 +240,7 @@ struct ScheduleEditor<Value: Equatable, ValueContent: View, ValuePicker: View, A
     }
     
     private var unsupportedValueWarning: some View {
-        WarningView(title: Text("Unsupported \(title)"),
+        WarningView(title: Text("不支持 \(title)"),
                     caption: Text(LocalizedString("更正突出显示的无支撑值。", comment: "Instruction to correct unsupported value")))
     }
 
