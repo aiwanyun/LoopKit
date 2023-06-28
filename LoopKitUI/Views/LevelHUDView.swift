@@ -17,7 +17,7 @@ open class LevelHUDView: BaseHUDView {
 
         updateColor()
 
-        accessibilityValue = LocalizedString("Unknown", comment: "Accessibility value for an unknown value")
+        accessibilityValue = LocalizedString("未知", comment: "Accessibility value for an unknown value")
     }
 
     override open func stateColorsDidUpdate() {

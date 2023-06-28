@@ -51,13 +51,13 @@ extension VersionUpdate {
     public var localizedDescription: String {
         switch self {
         case .noUpdateNeeded:
-            return LocalizedString("No Update", comment: "Description of no software update needed")
+            return LocalizedString("没有更新", comment: "Description of no software update needed")
         case .available:
-            return LocalizedString("Update Available", comment: "Description of informational software update needed")
+            return LocalizedString("更新可用", comment: "Description of informational software update needed")
         case .recommended:
-            return LocalizedString("Recommended Update", comment: "Description of supported software update needed")
+            return LocalizedString("推荐更新", comment: "Description of supported software update needed")
         case .required:
-            return LocalizedString("Critical Update", comment: "Description of critical software update needed")
+            return LocalizedString("关键更新", comment: "Description of critical software update needed")
         }
     }
 }

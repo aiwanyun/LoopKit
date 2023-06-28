@@ -22,7 +22,7 @@ public struct DemoPlaceHolderView: View {
             Image(systemName: "minus.circle")
                 .font(Font.system(size: 76, weight: .bold))
             
-            Text("Nothing to See Here!")
+            Text("这没东西看！")
                 .font(.title2)
                 .bold()
             

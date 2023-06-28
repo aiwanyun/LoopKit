@@ -63,7 +63,7 @@ public struct GuardrailConstrainedQuantityView: View {
                         .foregroundColor(warningColor)
                         .fixedSize(horizontal: true, vertical: false)
                 } else {
-                    Text("–")
+                    Text(" - ")
                         .foregroundColor(.secondary)
                 }
             }

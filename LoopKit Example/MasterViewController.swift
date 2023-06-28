@@ -97,28 +97,28 @@ class MasterViewController: UITableViewController {
         case .configuration:
             switch ConfigurationRow(rawValue: indexPath.row)! {
             case .basalRate:
-                cell.textLabel?.text = NSLocalizedString("Basal Rates", comment: "The title text for the basal rate schedule")
+                cell.textLabel?.text = NSLocalizedString("基础率", comment: "The title text for the basal rate schedule")
             case .carbRatio:
-                cell.textLabel?.text = NSLocalizedString("Carb Ratios", comment: "The title of the carb ratios schedule screen")
+                cell.textLabel?.text = NSLocalizedString("碳水化合物比率", comment: "The title of the carb ratios schedule screen")
             case .correctionRange:
-                cell.textLabel?.text = NSLocalizedString("Correction Range", comment: "The title text for the glucose correction range schedule")
+                cell.textLabel?.text = NSLocalizedString("更正范围", comment: "The title text for the glucose correction range schedule")
             case .insulinSensitivity:
-                cell.textLabel?.text = NSLocalizedString("Insulin Sensitivity", comment: "The title text for the insulin sensitivity schedule")
+                cell.textLabel?.text = NSLocalizedString("胰岛素灵敏度", comment: "The title text for the insulin sensitivity schedule")
             case .pumpID:
-                cell.textLabel?.text = NSLocalizedString("Pump ID", comment: "The title text for the pump ID")
+                cell.textLabel?.text = NSLocalizedString("泵ID", comment: "The title text for the pump ID")
             }
         case .data:
             switch DataRow(rawValue: indexPath.row)! {
             case .carbs:
-                cell.textLabel?.text = NSLocalizedString("Carbs", comment: "The title for the cell navigating to the carbs screen")
+                cell.textLabel?.text = NSLocalizedString("碳水化合物", comment: "The title for the cell navigating to the carbs screen")
             case .reservoir:
-                cell.textLabel?.text = NSLocalizedString("Reservoir", comment: "The title for the cell navigating to the reservoir screen")
+                cell.textLabel?.text = NSLocalizedString("水库", comment: "The title for the cell navigating to the reservoir screen")
             case .diagnostic:
-                cell.textLabel?.text = NSLocalizedString("Diagnostic", comment: "The title for the cell displaying diagnostic data")
+                cell.textLabel?.text = NSLocalizedString("诊断", comment: "The title for the cell displaying diagnostic data")
             case .generate:
-                cell.textLabel?.text = NSLocalizedString("Generate Data", comment: "The title for the cell displaying data generation")
+                cell.textLabel?.text = NSLocalizedString("生成数据", comment: "The title for the cell displaying data generation")
             case .reset:
-                cell.textLabel?.text = NSLocalizedString("Reset", comment: "Title for the cell resetting the data manager")
+                cell.textLabel?.text = NSLocalizedString("重置", comment: "Title for the cell resetting the data manager")
             }
         }
 
@@ -163,7 +163,7 @@ class MasterViewController: UITableViewController {
                 let scheduleVC = DailyQuantityScheduleTableViewController()
 
                 scheduleVC.delegate = self
-                scheduleVC.title = NSLocalizedString("Carb Ratios", comment: "The title of the carb ratios schedule screen")
+                scheduleVC.title = NSLocalizedString("碳水化合物比率", comment: "The title of the carb ratios schedule screen")
                 scheduleVC.unit = .gram()
 
                 if let schedule = dataManager?.carbRatioSchedule {
@@ -194,7 +194,7 @@ class MasterViewController: UITableViewController {
                 scheduleVC.delegate = self
                 scheduleVC.insulinSensitivityScheduleStorageDelegate = self
                 scheduleVC.schedule = dataManager?.insulinSensitivitySchedule
-                scheduleVC.title = NSLocalizedString("Insulin Sensitivity", comment: "The title of the insulin sensitivity schedule screen")
+                scheduleVC.title = NSLocalizedString("胰岛素灵敏度", comment: "The title of the insulin sensitivity schedule screen")
                 show(scheduleVC, sender: sender)
 
             case .pumpID:
@@ -202,10 +202,10 @@ class MasterViewController: UITableViewController {
 
 //                textFieldVC.delegate = self
                 textFieldVC.title = sender?.textLabel?.text
-                textFieldVC.placeholder = NSLocalizedString("Enter the 6-digit pump ID", comment: "The placeholder text instructing users how to enter a pump ID")
+                textFieldVC.placeholder = NSLocalizedString("输入6位泵ID", comment: "The placeholder text instructing users how to enter a pump ID")
                 textFieldVC.value = dataManager?.pumpID
                 textFieldVC.keyboardType = .numberPad
-                textFieldVC.contextHelp = NSLocalizedString("The pump ID can be found printed on the back, or near the bottom of the STATUS/Esc screen. It is the strictly numerical portion of the serial number (shown as SN or S/N).", comment: "Instructions on where to find the pump ID on a Minimed pump")
+                textFieldVC.contextHelp = NSLocalizedString("可以在状态/ESC屏幕的背面或底部打印泵ID。它是序列号的严格数值部分（如SN或S/N所示）。", comment: "Instructions on where to find the pump ID on a Minimed pump")
 
                 show(textFieldVC, sender: sender)
             default:

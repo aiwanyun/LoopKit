@@ -38,9 +38,9 @@ public extension DeliveryLimits.Setting {
     var title: String {
         switch self {
         case .maximumBasalRate:
-            return LocalizedString("Maximum Basal Rate", comment: "Title text for maximum basal rate configuration")
+            return LocalizedString("最大基础速率", comment: "Title text for maximum basal rate configuration")
         case .maximumBolus:
-            return LocalizedString("Maximum Bolus", comment: "Title text for maximum bolus configuration")
+            return LocalizedString("最大推注", comment: "Title text for maximum bolus configuration")
         }
     }
     
@@ -49,7 +49,7 @@ public extension DeliveryLimits.Setting {
         case .maximumBasalRate:
             return String(format: LocalizedString("Maximum Basal Rate is the highest temporary basal rate %1$@ is allowed to set.", comment: "Descriptive text for maximum basal rate (1: app name)"), appName)
         case .maximumBolus:
-            return LocalizedString("Maximum Bolus is the highest bolus amount you can deliver at one time to cover carbs or bring down high glucose.", comment: "Descriptive text for maximum bolus")
+            return LocalizedString("最大推注是您一次可以输送的最高推注，以覆盖碳水化合物或降低高葡萄糖。", comment: "Descriptive text for maximum bolus")
         }
     }
 }

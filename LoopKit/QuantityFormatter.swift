@@ -256,9 +256,9 @@ public extension HKUnit {
                     fallthrough
                 @unknown default:
                     if singular {
-                        return LocalizedString("Unit", comment: "The long unit display string for a singular international unit of insulin")
+                        return LocalizedString("单元", comment: "The long unit display string for a singular international unit of insulin")
                     } else {
-                        return LocalizedString("Units", comment: "The long unit display string for international units of insulin")
+                        return LocalizedString("单位", comment: "The long unit display string for international units of insulin")
                     }
                 }
             }
@@ -271,9 +271,9 @@ public extension HKUnit {
                     fallthrough
                 @unknown default:
                     if singular {
-                        return LocalizedString("Hour", comment: "The long unit display string for a singular hour")
+                        return LocalizedString("小时", comment: "The long unit display string for a singular hour")
                     } else {
-                        return LocalizedString("Hours", comment: "The long unit display string for hours")
+                        return LocalizedString("小时", comment: "The long unit display string for hours")
                     }
                 }
             }
@@ -286,9 +286,9 @@ public extension HKUnit {
                     fallthrough
                 @unknown default:
                     if singular {
-                        return LocalizedString("Unit/hour", comment: "The long unit display string for a singular international unit of insulin per hour")
+                        return LocalizedString("单位/小时", comment: "The long unit display string for a singular international unit of insulin per hour")
                     } else {
-                        return LocalizedString("Units/hour", comment: "The long unit display string for international units of insulin per hour")
+                        return LocalizedString("单位/小时", comment: "The long unit display string for international units of insulin per hour")
                     }
                 }
             }
@@ -307,7 +307,7 @@ public extension HKUnit {
             if self == HKUnit.milligramsPerDeciliter.unitDivided(by: HKUnit.internationalUnit()) {
                 switch style {
                 case .short, .medium:
-                    return LocalizedString("mg/dL/U", comment: "The short unit display string for milligrams per deciliter per U")
+                    return LocalizedString("mg/dl/u", comment: "The short unit display string for milligrams per deciliter per U")
                 case .long:
                     break  // Fallback to the MeasurementFormatter localization
                 @unknown default:
@@ -318,7 +318,7 @@ public extension HKUnit {
             if self == HKUnit.millimolesPerLiter.unitDivided(by: HKUnit.internationalUnit()) {
                 switch style {
                 case .short, .medium:
-                    return LocalizedString("mmol/L/U", comment: "The short unit display string for millimoles per liter per U")
+                    return LocalizedString("mmol/l/u", comment: "The short unit display string for millimoles per liter per U")
                 case .long:
                     break  // Fallback to the MeasurementFormatter localization
                 @unknown default:
@@ -329,7 +329,7 @@ public extension HKUnit {
             if self == HKUnit.gram().unitDivided(by: HKUnit.internationalUnit()) {
                 switch style {
                 case .short, .medium:
-                    return LocalizedString("g/U", comment: "The short unit display string for grams per U")
+                    return LocalizedString("g/u", comment: "The short unit display string for grams per U")
                 case .long:
                     fallthrough
                 @unknown default:
@@ -340,7 +340,7 @@ public extension HKUnit {
             if self == HKUnit.millimolesPerLiterPerMinute {
                 switch style {
                 case .short, .medium:
-                    return LocalizedString("mmol/L/min", comment: "The short unit display string for millimoles per liter per minute")
+                    return LocalizedString("mmol/l/min", comment: "The short unit display string for millimoles per liter per minute")
                 case .long:
                     fallthrough
                 @unknown default:
@@ -351,7 +351,7 @@ public extension HKUnit {
             if self == HKUnit.milligramsPerDeciliterPerMinute {
                 switch style {
                 case .short, .medium:
-                    return LocalizedString("mg/dL/min", comment: "The short unit display string for milligrams per liter per minute")
+                    return LocalizedString("mg/dl/min", comment: "The short unit display string for milligrams per liter per minute")
                 case .long:
                     fallthrough
                 @unknown default:

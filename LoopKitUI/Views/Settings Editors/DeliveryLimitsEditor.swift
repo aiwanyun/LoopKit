@@ -125,7 +125,7 @@ public struct DeliveryLimitsEditor: View {
     }
     
     private var cancelButton: some View {
-        Button(action: { self.dismiss() } ) { Text(LocalizedString("Cancel", comment: "Cancel editing settings button title")) }
+        Button(action: { self.dismiss() } ) { Text(LocalizedString("取消", comment: "Cancel editing settings button title")) }
     }
     
     private var content: some View {
@@ -283,7 +283,7 @@ public struct DeliveryLimitsEditor: View {
 
     private var instructionalContent: some View {
         HStack { // to align with guardrail warning, if present
-            Text(LocalizedString("You can edit a setting by tapping into any line item.", comment: "Description of how to edit setting"))
+            Text(LocalizedString("您可以通过利用任何行项目来编辑设置。", comment: "Description of how to edit setting"))
             .foregroundColor(.secondary)
             .font(.subheadline)
             Spacer()
@@ -389,16 +389,16 @@ public struct DeliveryLimitsEditor: View {
                 message: content.message,
                 primaryButton: .cancel(
                     content.cancel ??
-                    Text(LocalizedString("Go Back", comment: "Button text to return to editing a schedule after from alert popup when some schedule values are outside the recommended range"))),
+                    Text(LocalizedString("回去", comment: "Button text to return to editing a schedule after from alert popup when some schedule values are outside the recommended range"))),
                 secondaryButton: .default(
                     content.ok ??
-                    Text(LocalizedString("Continue", comment: "Button text to confirm saving from alert popup when some schedule values are outside the recommended range")),
+                    Text(LocalizedString("继续", comment: "Button text to confirm saving from alert popup when some schedule values are outside the recommended range")),
                     action: startSaving
                 )
             )
         case .saveError(let error):
             return SwiftUI.Alert(
-                title: Text(LocalizedString("Unable to Save", comment: "Alert title when error occurs while saving a schedule")),
+                title: Text(LocalizedString("无法保存", comment: "Alert title when error occurs while saving a schedule")),
                 message: Text(error.localizedDescription)
             )
         }
@@ -406,10 +406,10 @@ public struct DeliveryLimitsEditor: View {
     
     private var confirmationAlertContent: AlertContent {
         AlertContent(
-            title: Text(LocalizedString("Save Delivery Limits?", comment: "Alert title for confirming delivery limits outside the recommended range")),
+            title: Text(LocalizedString("保存递送限制？", comment: "Alert title for confirming delivery limits outside the recommended range")),
             message: Text(TherapySetting.deliveryLimits.guardrailSaveWarningCaption),
-            cancel: Text(LocalizedString("Go Back", comment: "Text for go back action on confirmation alert")),
-            ok: Text(LocalizedString("Continue", comment: "Text for continue action on confirmation alert")
+            cancel: Text(LocalizedString("回去", comment: "Text for go back action on confirmation alert")),
+            ok: Text(LocalizedString("继续", comment: "Text for continue action on confirmation alert")
             )
         )
     }
@@ -430,16 +430,16 @@ struct DeliveryLimitsGuardrailWarning: View {
             case .maximumBasalRate:
                 switch threshold {
                 case .minimum, .belowRecommended:
-                    title = Text(LocalizedString("Low Maximum Basal Rate", comment: "Title text for low maximum basal rate warning"))
+                    title = Text(LocalizedString("低最大基础速率", comment: "Title text for low maximum basal rate warning"))
                 case .aboveRecommended, .maximum:
-                    title = Text(LocalizedString("High Maximum Basal Rate", comment: "Title text for high maximum basal rate warning"))
+                    title = Text(LocalizedString("高最大基础速率", comment: "Title text for high maximum basal rate warning"))
                 }
             case .maximumBolus:
                 switch threshold {
                 case .minimum, .belowRecommended:
-                    title = Text(LocalizedString("Low Maximum Bolus", comment: "Title text for low maximum bolus warning"))
+                    title = Text(LocalizedString("低最大推注", comment: "Title text for low maximum bolus warning"))
                 case .aboveRecommended, .maximum:
-                    title = Text(LocalizedString("High Maximum Bolus", comment: "Title text for high maximum bolus warning"))
+                    title = Text(LocalizedString("高最大推注", comment: "Title text for high maximum bolus warning"))
                 }
             }
 
@@ -447,7 +447,7 @@ struct DeliveryLimitsGuardrailWarning: View {
         case 2:
             return GuardrailWarning(
                 therapySetting: .deliveryLimits,
-                title: Text(LocalizedString("Delivery Limits", comment: "Title text for crossed thresholds guardrail warning")),
+                title: Text(LocalizedString("交货限制", comment: "Title text for crossed thresholds guardrail warning")),
                 thresholds: Array(crossedThresholds.values))
         default:
             preconditionFailure("Unreachable: only two delivery limit settings exist")

@@ -134,8 +134,8 @@ public struct CorrectionRangeScheduleEditor: View {
     var instructionalContent: some View {
         HStack { // to align with guardrail warning, if present
             VStack(alignment: .leading, spacing: 20) {
-                Text(LocalizedString("You can edit a setting by tapping into any line item.", comment: "Description of how to edit setting"))
-                Text(LocalizedString("You can add different ranges for different times of day by using the ➕.", comment: "Description of how to add a configuration range"))
+                Text(LocalizedString("您可以通过利用任何行项目来编辑设置。", comment: "Description of how to edit setting"))
+                Text(LocalizedString("您可以通过使用➕添加一天中不同的时间。", comment: "Description of how to add a configuration range"))
             }
             .foregroundColor(.secondary)
             .font(.subheadline)
@@ -169,7 +169,7 @@ public struct CorrectionRangeScheduleEditor: View {
 
     private var confirmationAlertContent: AlertContent {
         AlertContent(
-            title: Text(LocalizedString("Save Correction Range(s)?", comment: "Alert title for confirming correction ranges outside the recommended range")),
+            title: Text(LocalizedString("节省更正范围？", comment: "Alert title for confirming correction ranges outside the recommended range")),
             message: Text(TherapySetting.glucoseTargetRange.guardrailSaveWarningCaption)
         )
     }
@@ -190,13 +190,13 @@ private struct CorrectionRangeGuardrailWarning: View {
     private func singularWarningTitle(for threshold: SafetyClassification.Threshold) -> Text {
         switch threshold {
         case .minimum, .belowRecommended:
-            return Text(LocalizedString("Low Correction Value", comment: "Title text for the low correction value warning"))
+            return Text(LocalizedString("低校正值", comment: "Title text for the low correction value warning"))
         case .aboveRecommended, .maximum:
-            return Text(LocalizedString("High Correction Value", comment: "Title text for the high correction value warning"))
+            return Text(LocalizedString("高校正值", comment: "Title text for the high correction value warning"))
         }
     }
 
     private var multipleWarningTitle: Text {
-        Text(LocalizedString("Correction Values", comment: "Title text for multi-value correction value warning"))
+        Text(LocalizedString("校正值", comment: "Title text for multi-value correction value warning"))
     }
 }

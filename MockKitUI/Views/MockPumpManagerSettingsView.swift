@@ -96,7 +96,7 @@ struct MockPumpManagerSettingsView: View {
     }
     
     private var expirationText: some View {
-        Text("Pump expires in ")
+        Text("泵到期")
             .font(.subheadline)
             .foregroundColor(.secondary)
     }
@@ -105,7 +105,7 @@ struct MockPumpManagerSettingsView: View {
         HStack(alignment: .lastTextBaseline) {
             Text("2")
                 .font(.system(size: 24, weight: .heavy, design: .default))
-            Text("days")
+            Text("天")
                 .font(.system(size: 15, weight: .regular, design: .default))
                 .foregroundColor(.secondary)
                 .offset(x: -3)
@@ -133,7 +133,7 @@ struct MockPumpManagerSettingsView: View {
     }
     
     private var suspendResumeInsulinSubSection: some View {
-        Section(header: SectionHeader(label: LocalizedString("Activity", comment: "Section header for the activity section"))) {
+        Section(header: SectionHeader(label: LocalizedString("活动", comment: "Section header for the activity section"))) {
             Button(action: suspendResumeTapped) {
                 HStack {
                     Image(systemName: "pause.circle.fill")
@@ -147,7 +147,7 @@ struct MockPumpManagerSettingsView: View {
             }
             .disabled(viewModel.transitioningSuspendResumeInsulinDelivery)
             if viewModel.isDeliverySuspended {
-                LabeledValueView(label: LocalizedString("Suspended At", comment: "Label for suspended at field"),
+                LabeledValueView(label: LocalizedString("暂停", comment: "Label for suspended at field"),
                                  value: viewModel.suspendedAtString)
             }
         }
@@ -176,7 +176,7 @@ struct MockPumpManagerSettingsView: View {
             LabeledValueView(label: "Pump Expires", value: viewModel.pumpExpirationDateTimeString)
             
             NavigationLink(destination: DemoPlaceHolderView(appName: appName)) {
-                Text("Device Details")
+                Text("设备详细信息")
             }
         }
     }
@@ -184,7 +184,7 @@ struct MockPumpManagerSettingsView: View {
     private var replaceSystemComponentsSubSection: some View {
         Section {
             NavigationLink(destination: DemoPlaceHolderView(appName: appName)) {
-                Text("Replace Pump")
+                Text("更换泵")
                     .foregroundColor(.accentColor)
             }
         }
@@ -200,7 +200,7 @@ struct MockPumpManagerSettingsView: View {
     private var notificationSubSection: some View {
         Section(header: SectionHeader(label: "Configuration")) {
             NavigationLink(destination: DemoPlaceHolderView(appName: appName)) {
-                Text("Notification Settings")
+                Text("通知设置")
             }
         }
     }
@@ -214,25 +214,25 @@ struct MockPumpManagerSettingsView: View {
     private var supportSection: some View {
         Section(header: SectionHeader(label: "Support")) {
             NavigationLink(destination: DemoPlaceHolderView(appName: appName)) {
-                Text("Get help with your pump")
+                Text("得到泵的帮助")
             }
         }
     }
     
     private var doneButton: some View {
-        Button(LocalizedString("Done", comment: "Settings done button label"), action: dismiss)
+        Button(LocalizedString("完毕", comment: "Settings done button label"), action: dismiss)
     }
     
     private func alert(for presentedAlert: PresentedAlert) -> SwiftUI.Alert {
         switch presentedAlert {
         case .suspendInsulinDeliveryError(let error):
             return Alert(
-                title: Text("Failed to Suspend Insulin Delivery"),
+                title: Text("未能暂停胰岛素输送"),
                 message: Text(error.localizedDescription)
             )
         case .resumeInsulinDeliveryError(let error):
             return Alert(
-                title: Text("Failed to Resume Insulin Delivery"),
+                title: Text("无法恢复胰岛素输送"),
                 message: Text(error.localizedDescription)
             )
         }

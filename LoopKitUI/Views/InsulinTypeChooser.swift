@@ -59,8 +59,8 @@ public struct InsulinTypeChooser: View {
             } else {
                 HStack {
                     CheckmarkListItem(
-                        title: Text(LocalizedString("Unset", comment: "Title for selection when no insulin type is selected.")),
-                        description: Text(LocalizedString("The currently selected fast acting insulin model will be used as a default.", comment: "Description for selection when no insulin type is selected.")),
+                        title: Text(LocalizedString("不设置", comment: "Title for selection when no insulin type is selected.")),
+                        description: Text(LocalizedString("当前选择的快速作用胰岛素模型将被用作默认情况。", comment: "Description for selection when no insulin type is selected.")),
                         isSelected: Binding(
                             get: { self.insulinType == nil },
                             set: { isSelected in

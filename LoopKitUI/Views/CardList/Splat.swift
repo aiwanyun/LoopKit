@@ -14,11 +14,11 @@ import SwiftUI
 /// Use `Splat` to intermix static and dynamic card components:
 /// ```
 /// Card {
-///     Text("Above dynamic data")
+///     Text("上述动态数据")
 ///     Splat(1...5, id: \.self) { value in
 ///         Text("Dynamic data \(value)")
 ///     }
-///     Text("Below dynamic data")
+///     Text("以下动态数据")
 /// }
 /// ```
 public struct Splat: View {

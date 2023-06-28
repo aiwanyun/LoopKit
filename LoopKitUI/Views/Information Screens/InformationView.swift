@@ -38,7 +38,7 @@ struct InformationView<InformationalContent: View> : View {
     ) {
         self.init(
             title: title,
-            buttonText: Text(LocalizedString("Continue", comment: "Button to advance to setting editor")),
+            buttonText: Text(LocalizedString("继续", comment: "Button to advance to setting editor")),
             informationalContent: informationalContent,
             onExit: onExit,
             mode: mode
@@ -96,7 +96,7 @@ struct InformationView<InformationalContent: View> : View {
     }
     
     private var cancelButton: some View {
-        Button(action: onExit, label: { Text(LocalizedString("Close", comment: "Text to close informational page")) })
+        Button(action: onExit, label: { Text(LocalizedString("关闭", comment: "Text to close informational page")) })
     }
     
     private var nextPageButton: some View {

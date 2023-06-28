@@ -87,7 +87,7 @@ extension ConfigurationPage {
     ) {
         self.init(
             title: title,
-            actionButtonTitle: Text(LocalizedString("Save", comment: "The button text for saving on a configuration page")),
+            actionButtonTitle: Text(LocalizedString("节省", comment: "The button text for saving on a configuration page")),
             actionButtonState: saveButtonState,
             cards: cards,
             actionAreaContent: actionAreaContent,
@@ -105,7 +105,7 @@ extension ConfigurationPage {
     ) {
         self.init(
             title: title,
-            actionButtonTitle: Text(LocalizedString("Save", comment: "The button text for saving on a configuration page")),
+            actionButtonTitle: Text(LocalizedString("节省", comment: "The button text for saving on a configuration page")),
             actionButtonState: saveButtonState,
             cardListStyle: .sectioned(sections),
             actionAreaContent: actionAreaContent(),
@@ -117,14 +117,14 @@ extension ConfigurationPage {
 struct ConfigurationPage_Previews: PreviewProvider {
     static var previews: some View {
         ConfigurationPage(
-            title: Text("Example"),
+            title: Text("例子"),
             cards: {
-                Text("A simple card")
-                Text("A card whose text will wrap onto multiple lines if I continue to type for long enough—this length should do")
+                Text("一张简单的卡")
+                Text("如果我继续输入足够长的时间，其文字将包裹在多行上的卡片 - 该长度应该做")
 
                 Card {
-                    Text("Top component")
-                    Text("Bottom component")
+                    Text("顶部组件")
+                    Text("底部组件")
                 }
 
                 Card(of: 1...3, id: \.self) { value in
@@ -132,7 +132,7 @@ struct ConfigurationPage_Previews: PreviewProvider {
                 }
             },
             actionAreaContent: {
-                Text("Above the save button")
+                Text("在保存按钮上方")
             },
             onSave: {}
         )

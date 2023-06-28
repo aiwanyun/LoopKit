@@ -19,12 +19,12 @@ extension SettingsPresentationMode {
     func buttonText(isSaving: Bool = false) -> String {
         switch self {
         case .acceptanceFlow:
-            return LocalizedString("Confirm Setting", comment: "The button text for confirming the setting")
+            return LocalizedString("确认设置", comment: "The button text for confirming the setting")
         case .settings:
             if isSaving {
-                return LocalizedString("Saving...", comment: "The button text during saving on a configuration page")
+                return LocalizedString("保存...", comment: "The button text during saving on a configuration page")
             } else {
-                return LocalizedString("Save", comment: "The button text for saving on a configuration page")
+                return LocalizedString("节省", comment: "The button text for saving on a configuration page")
             }
         }
     }

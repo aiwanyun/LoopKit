@@ -17,9 +17,9 @@ import SwiftUI
 /// A multi-component card may consist of purely static components:
 /// ```
 /// Card {
-///     Text("Top")
-///     Text("Middle")
-///     Text("Bottom")
+///     Text("顶部")
+///     Text("中间")
+///     Text("底部")
 /// }
 /// ```
 ///
@@ -33,11 +33,11 @@ import SwiftUI
 /// Finally, dynamic components can be unrolled to intermix with static components via `Splat`:
 /// ```
 /// Card {
-///     Text("Above dynamic data")
+///     Text("上述动态数据")
 ///     Splat(1...5, id: \.self) { value in
 ///         Text("Dynamic data \(value)")
 ///     }
-///     Text("Below dynamic data")
+///     Text("以下动态数据")
 /// }
 /// ```
 public struct Card: View {

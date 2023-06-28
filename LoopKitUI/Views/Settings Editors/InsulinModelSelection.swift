@@ -108,12 +108,12 @@ public struct InsulinModelSelection: View {
     }
     
     private var cancelButton: some View {
-        Button(action: { dismiss() } ) { Text(LocalizedString("Cancel", comment: "Cancel editing settings button title")) }
+        Button(action: { dismiss() } ) { Text(LocalizedString("取消", comment: "Cancel editing settings button title")) }
     }
     
     private var content: some View {
         VStack(spacing: 0) {
-            CardList(title: Text(LocalizedString("Insulin Model", comment: "Title text for insulin model")),
+            CardList(title: Text(LocalizedString("胰岛素模型", comment: "Title text for insulin model")),
                      style: .simple(CardStack(cards: [card])))
             Button(action: { startSaving() }) {
                 Text(mode.buttonText())
@@ -245,7 +245,7 @@ public struct InsulinModelSelection: View {
 
     var dismissButton: some View {
         Button(action: dismiss) {
-            Text(LocalizedString("Close", comment: "Button text to close a modal"))
+            Text(LocalizedString("关闭", comment: "Button text to close a modal"))
         }
     }
 }

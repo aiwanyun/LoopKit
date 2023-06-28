@@ -47,7 +47,7 @@ struct MockCGMManagerSettingsView: View {
         }
         .insetGroupedListStyle()
         .navigationBarItems(trailing: doneButton)
-        .navigationBarTitle(Text("CGM Simulator"), displayMode: .large)
+        .navigationBarTitle(Text("CGM模拟器"), displayMode: .large)
         .alert(item: $presentedAlert, content: alert(for:))
     }
     
@@ -101,7 +101,7 @@ struct MockCGMManagerSettingsView: View {
     }
     
     private var expirationText: some View {
-        Text("Sensor expires in ")
+        Text("传感器到期")
             .font(.subheadline)
             .foregroundColor(.secondary)
     }
@@ -110,7 +110,7 @@ struct MockCGMManagerSettingsView: View {
         HStack(alignment: .lastTextBaseline) {
             Text("5")
                 .font(.system(size: 24, weight: .heavy, design: .default))
-            Text("days")
+            Text("天")
                 .font(.system(size: 15, weight: .regular, design: .default))
                 .foregroundColor(.secondary)
                 .offset(x: -3)
@@ -138,7 +138,7 @@ struct MockCGMManagerSettingsView: View {
     @ViewBuilder
     private var lastGlucoseReading: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text("Last Reading")
+            Text("最后读")
                 .foregroundColor(.secondary)
             
             HStack(alignment: .center, spacing: 16) {
@@ -166,7 +166,7 @@ struct MockCGMManagerSettingsView: View {
                 Text("\(viewModel.lastReadingMinutesFromNow)")
                     .font(.title)
                     .fontWeight(.heavy)
-                Text("min")
+                Text("最小")
                     .foregroundColor(.secondary)
             }
         }
@@ -176,7 +176,7 @@ struct MockCGMManagerSettingsView: View {
     private var notificationSubSection: some View {
         Section {
             NavigationLink(destination: DemoPlaceHolderView(appName: appName)) {
-                Text("Notification Settings")
+                Text("通知设置")
             }
         }
     }
@@ -199,7 +199,7 @@ struct MockCGMManagerSettingsView: View {
     private var stopSensorSubSection: some View {
         Section {
             NavigationLink(destination: DemoPlaceHolderView(appName: appName)) {
-                Text("Stop Sensor")
+                Text("停止传感器")
                     .foregroundColor(guidanceColors.critical)
             }
         }
@@ -216,25 +216,25 @@ struct MockCGMManagerSettingsView: View {
     private var supportSection: some View {
         Section(header: SectionHeader(label: "Support")) {
             NavigationLink(destination: DemoPlaceHolderView(appName: appName)) {
-                Text("Get help with your CGM")
+                Text("在CGM方面获得帮助")
             }
         }
     }
     
     private var doneButton: some View {
-        Button(LocalizedString("Done", comment: "Settings done button label"), action: dismiss)
+        Button(LocalizedString("完毕", comment: "Settings done button label"), action: dismiss)
     }
     
     private func alert(for presentedAlert: PresentedAlert) -> SwiftUI.Alert {
         switch presentedAlert {
         case .suspendInsulinDeliveryError(let error):
             return Alert(
-                title: Text("Failed to Suspend Insulin Delivery"),
+                title: Text("未能暂停胰岛素输送"),
                 message: Text(error.localizedDescription)
             )
         case .resumeInsulinDeliveryError(let error):
             return Alert(
-                title: Text("Failed to Resume Insulin Delivery"),
+                title: Text("无法恢复胰岛素输送"),
                 message: Text(error.localizedDescription)
             )
         }

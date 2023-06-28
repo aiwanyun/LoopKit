@@ -75,7 +75,7 @@ public struct VideoView: View {
     public var body: some View {
         HStack {
             Spacer()
-            Button(LocalizedString("Done", comment: "Video player done button label"), action: dismiss)
+            Button(LocalizedString("完毕", comment: "Video player done button label"), action: dismiss)
         }
         .padding()
         if let url = url {

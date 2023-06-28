@@ -25,13 +25,13 @@ struct DeliveryUncertaintyRecoveryView: View, HorizontalSizeClassOverride {
                     self.recoverCommsTapped()
                     self.dismiss()
                 }) {
-                    Text(LocalizedString("Recover Simulator", comment: "Button title recovering comms"))
+                    Text(LocalizedString("恢复模拟器", comment: "Button title recovering comms"))
                     .actionButtonStyle()
                     .padding()
                 }
             }
             .environment(\.horizontalSizeClass, horizontalOverride)
-            .navigationBarTitle(Text("Comms Recovery"), displayMode: .large)
+            .navigationBarTitle(Text("通讯恢复"), displayMode: .large)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     backButton
@@ -45,7 +45,7 @@ struct DeliveryUncertaintyRecoveryView: View, HorizontalSizeClassOverride {
     }
     
     private var backButton: some View {
-        Button(LocalizedString("Back", comment: "Back button text on DeliveryUncertaintyRecoveryView"), action: {
+        Button(LocalizedString("后退", comment: "Back button text on DeliveryUncertaintyRecoveryView"), action: {
             self.dismiss()
         })
     }

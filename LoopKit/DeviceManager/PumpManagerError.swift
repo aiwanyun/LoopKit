@@ -29,15 +29,15 @@ extension PumpManagerError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .communication(let error):
-            return error?.errorDescription ?? LocalizedString("Communication Failure", comment: "Generic pump error description")
+            return error?.errorDescription ?? LocalizedString("沟通失败", comment: "Generic pump error description")
         case .configuration(let error):
-            return error?.errorDescription ?? LocalizedString("Invalid Configuration", comment: "Generic pump error description")
+            return error?.errorDescription ?? LocalizedString("无效的配置", comment: "Generic pump error description")
         case .connection(let error):
-            return error?.errorDescription ?? LocalizedString("Connection Failure", comment: "Generic pump error description")
+            return error?.errorDescription ?? LocalizedString("连接故障", comment: "Generic pump error description")
         case .deviceState(let error):
-            return error?.errorDescription ?? LocalizedString("Device Refused", comment: "Generic pump error description")
+            return error?.errorDescription ?? LocalizedString("设备拒绝", comment: "Generic pump error description")
         case .uncertainDelivery:
-            return LocalizedString("Uncertain Delivery", comment: "Error description for uncertain delivery")
+            return LocalizedString("交付不确定", comment: "Error description for uncertain delivery")
         }
     }
 
@@ -52,7 +52,7 @@ extension PumpManagerError: LocalizedError {
         case .deviceState(let error):
             return error?.failureReason
         case .uncertainDelivery:
-            return LocalizedString("Communications interrupted during insulin delivery command.", comment: "Failure reason for uncertain delivery")
+            return LocalizedString("胰岛素输送命令期间中断通信。", comment: "Failure reason for uncertain delivery")
         }
     }
 
@@ -67,7 +67,7 @@ extension PumpManagerError: LocalizedError {
         case .deviceState(let error):
             return error?.recoverySuggestion
         case .uncertainDelivery:
-            return LocalizedString("Make sure your pump is within communication range of your phone.", comment: "Recovery suggestion for uncertain delivery")
+            return LocalizedString("确保您的泵在手机的通信范围内。", comment: "Recovery suggestion for uncertain delivery")
         }
     }
 

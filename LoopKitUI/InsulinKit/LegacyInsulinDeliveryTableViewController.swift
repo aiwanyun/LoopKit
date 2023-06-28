@@ -35,8 +35,8 @@ public final class LegacyInsulinDeliveryTableViewController: UITableViewControll
         didSet {
             let titleFont = UIFont.systemFont(ofSize: 15, weight: .semibold)
             dataSourceSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: titleFont], for: .normal)
-            dataSourceSegmentedControl.setTitle(LocalizedString("Event History", comment: "Segmented button title for insulin delivery log event history"), forSegmentAt: 0)
-            dataSourceSegmentedControl.setTitle(LocalizedString("Reservoir", comment: "Segmented button title for insulin delivery log reservoir history"), forSegmentAt: 1)
+            dataSourceSegmentedControl.setTitle(LocalizedString("事件历史", comment: "Segmented button title for insulin delivery log event history"), forSegmentAt: 0)
+            dataSourceSegmentedControl.setTitle(LocalizedString("水库", comment: "Segmented button title for insulin delivery log reservoir history"), forSegmentAt: 1)
         }
     }
 
@@ -126,7 +126,7 @@ public final class LegacyInsulinDeliveryTableViewController: UITableViewControll
 
         if editing && enableEntryDeletion {
             let item = UIBarButtonItem(
-                title: LocalizedString("Delete All", comment: "Button title to delete all objects"),
+                title: LocalizedString("删除所有", comment: "Button title to delete all objects"),
                 style: .plain,
                 target: self,
                 action: #selector(confirmDeletion(_:))
@@ -266,7 +266,7 @@ public final class LegacyInsulinDeliveryTableViewController: UITableViewControll
                         self.iobDateLabel.text = nil
                     case .success(let iob):
                         self.iobValueLabel.text = self.iobNumberFormatter.string(from: iob.value)
-                        self.iobDateLabel.text = String(format: LocalizedString("com.loudnate.InsulinKit.IOBDateLabel", value: "at %1$@", comment: "The format string describing the date of an IOB value. The first format argument is the localized date."), self.timeFormatter.string(from: iob.startDate))
+                        self.iobDateLabel.text = String(format: LocalizedString("com.loudnate.insulinkit.iobdatelabel", value: "at %1$@", comment: "The format string describing the date of an IOB value. The first format argument is the localized date."), self.timeFormatter.string(from: iob.startDate))
                     }
                 }
             }
@@ -285,7 +285,7 @@ public final class LegacyInsulinDeliveryTableViewController: UITableViewControll
                         self.totalDateLabel.text = nil
                     case .success(let result):
                         self.totalValueLabel.text = NumberFormatter.localizedString(from: NSNumber(value: result.value), number: .none)
-                        self.totalDateLabel.text = String(format: LocalizedString("com.loudnate.InsulinKit.totalDateLabel", value: "since %1$@", comment: "The format string describing the starting date of a total value. The first format argument is the localized date."), DateFormatter.localizedString(from: result.startDate, dateStyle: .none, timeStyle: .short))
+                        self.totalDateLabel.text = String(format: LocalizedString("com.loudnate.insulinkit.totaldatelabel", value: "since %1$@", comment: "The format string describing the starting date of a total value. The first format argument is the localized date."), DateFormatter.localizedString(from: result.startDate, dateStyle: .none, timeStyle: .short))
                     }
                 }
             }
@@ -313,9 +313,9 @@ public final class LegacyInsulinDeliveryTableViewController: UITableViewControll
 
         switch DataSourceSegment(rawValue: dataSourceSegmentedControl.selectedSegmentIndex)! {
         case .reservoir:
-            confirmMessage = LocalizedString("Are you sure you want to delete all reservoir values?", comment: "Action sheet confirmation message for reservoir deletion")
+            confirmMessage = LocalizedString("您确定要删除所有储层值吗？", comment: "Action sheet confirmation message for reservoir deletion")
         case .history:
-            confirmMessage = LocalizedString("Are you sure you want to delete all history entries?", comment: "Action sheet confirmation message for pump history deletion")
+            confirmMessage = LocalizedString("您确定要删除所有历史记录吗？", comment: "Action sheet confirmation message for pump history deletion")
         }
 
         let sheet = UIAlertController(deleteAllConfirmationMessage: confirmMessage) {
@@ -466,7 +466,7 @@ public final class LegacyInsulinDeliveryTableViewController: UITableViewControll
                 return description.joined(separator: "\n\n")
             })
 
-            vc.title = LocalizedString("Pump Event", comment: "The title of the screen displaying a pump event")
+            vc.title = LocalizedString("泵活动", comment: "The title of the screen displaying a pump event")
 
             show(vc, sender: indexPath)
         }
@@ -483,13 +483,13 @@ fileprivate extension UIAlertController {
         )
         
         addAction(UIAlertAction(
-            title: LocalizedString("Delete All", comment: "Button title to delete all objects"),
+            title: LocalizedString("删除所有", comment: "Button title to delete all objects"),
             style: .destructive,
             handler: { (_) in handler() }
         ))
 
         addAction(UIAlertAction(
-            title: LocalizedString("Cancel", comment: "The title of the cancel action in an action sheet"),
+            title: LocalizedString("取消", comment: "The title of the cancel action in an action sheet"),
             style: .cancel
         ))
     }

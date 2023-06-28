@@ -125,9 +125,9 @@ final class MockServiceTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch Section(rawValue: section)! {
         case .source:
-            return LocalizedString("Source", comment: "Caption for Source")
+            return LocalizedString("来源", comment: "Caption for Source")
         case .history:
-            return LocalizedString("History", comment: "Caption for History")
+            return LocalizedString("历史", comment: "Caption for History")
         case .deleteService:
             return " " // Use an empty string for more dramatic spacing
         }
@@ -245,7 +245,7 @@ fileprivate class MockServiceHistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = LocalizedString("History", comment: "History Caption")
+        title = LocalizedString("历史", comment: "History Caption")
 
         textView.contentInsetAdjustmentBehavior = .always
         textView.isEditable = false
@@ -330,18 +330,18 @@ fileprivate extension UIAlertController {
     convenience init(serviceDeletionHandler handler: @escaping () -> Void) {
         self.init(
             title: nil,
-            message: LocalizedString("Are you sure you want to delete this service?", comment: "Confirmation message for deleting a service"),
+            message: LocalizedString("您确定要删除此服务吗？", comment: "Confirmation message for deleting a service"),
             preferredStyle: .actionSheet
         )
 
         addAction(UIAlertAction(
-            title: LocalizedString("Delete Service", comment: "Button title to delete a service"),
+            title: LocalizedString("删除服务", comment: "Button title to delete a service"),
             style: .destructive,
             handler: { _ in
                 handler()
         }))
 
-        let cancel = LocalizedString("Cancel", comment: "The title of the cancel action in an action sheet")
+        let cancel = LocalizedString("取消", comment: "The title of the cancel action in an action sheet")
         addAction(UIAlertAction(title: cancel, style: .cancel, handler: nil))
     }
 }

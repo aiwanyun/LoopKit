@@ -124,8 +124,8 @@ struct QuantityScheduleEditor<ActionAreaContent: View>: View {
     private var instructionalContent: some View {
         HStack { // to align with guardrail warning, if present
             VStack (alignment: .leading, spacing: 20) {
-                Text(LocalizedString("You can edit a setting by tapping into any line item.", comment: "Description of how to edit setting"))
-                Text(LocalizedString("You can add entries for different times of day by using the ➕.", comment: "Description of how to add a range"))
+                Text(LocalizedString("您可以通过利用任何行项目来编辑设置。", comment: "Description of how to edit setting"))
+                Text(LocalizedString("您可以使用➕添加一天中不同时间的条目。", comment: "Description of how to add a range"))
             }
             .foregroundColor(.secondary)
             .font(.subheadline)

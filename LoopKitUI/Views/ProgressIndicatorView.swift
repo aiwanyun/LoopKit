@@ -106,11 +106,11 @@ public struct ProgressIndicatorView: View {
     var accessibilityLabel: String {
         switch self.state {
         case .indeterminantProgress:
-            return LocalizedString("Progressing.", comment: "Accessibility label for ProgressIndicatorView when showIndeterminantProgress")
+            return LocalizedString("进展。", comment: "Accessibility label for ProgressIndicatorView when showIndeterminantProgress")
         case .timedProgress:
             return String(format: LocalizedString("%1$d percent complete.", comment: "Format string for progress accessibility label (1: duration in seconds)"), Int((self.progress * 100).rounded()))
         case .completed:
-            return LocalizedString("Completed.", comment: "Accessibility label for ProgressIndicatorView when showIndeterminantProgress")
+            return LocalizedString("完全的。", comment: "Accessibility label for ProgressIndicatorView when showIndeterminantProgress")
         case .hidden:
             return ""
         }
@@ -142,7 +142,7 @@ struct ProgressPreviewWrapper: View {
                 self.modeIndex = (self.modeIndex + 1) % modes.count
 
             }) {
-                Text("Switch Preview State")
+                Text("开关预览状态")
             }
             Text(String(describing: self.setupState)).foregroundColor(Color.secondary).lineLimit(1)
         }

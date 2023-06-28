@@ -19,17 +19,17 @@ public enum InsulinType: Int, Codable, CaseIterable {
     public var title: String {
         switch self {
         case .novolog:
-            return LocalizedString("Novolog (insulin aspart)", comment: "Title for Novolog insulin type")
+            return LocalizedString("Novolog（胰岛素阿斯帕特）", comment: "Title for Novolog insulin type")
         case .humalog:
-            return LocalizedString("Humalog (insulin lispro)", comment: "Title for Humalog insulin type")
+            return LocalizedString("Humalog（胰岛素lispro）", comment: "Title for Humalog insulin type")
         case .apidra:
-            return LocalizedString("Apidra (insulin glulisine)", comment: "Title for Apidra insulin type")
+            return LocalizedString("阿皮德拉（胰岛素胰岛素）", comment: "Title for Apidra insulin type")
         case .fiasp:
-            return LocalizedString("Fiasp", comment: "Title for Fiasp insulin type")
+            return LocalizedString("fiasp", comment: "Title for Fiasp insulin type")
         case .lyumjev:
             return LocalizedString("Lyumjev", comment: "Title for Lyumjev insulin type")
         case .afrezza:
-            return LocalizedString("Afrezza", comment: "Title for Afrezza insulin type")
+            return LocalizedString("afrezza", comment: "Title for Afrezza insulin type")
         }
     }
     
@@ -40,30 +40,30 @@ public enum InsulinType: Int, Codable, CaseIterable {
         case .humalog:
             return LocalizedString("Humalog", comment: "Brand name for humalog insulin type")
         case .apidra:
-            return LocalizedString("Apidra", comment: "Brand name for apidra insulin type")
+            return LocalizedString("阿皮德拉", comment: "Brand name for apidra insulin type")
         case .fiasp:
-            return LocalizedString("Fiasp", comment: "Brand name for fiasp insulin type")
+            return LocalizedString("fiasp", comment: "Brand name for fiasp insulin type")
         case .lyumjev:
             return LocalizedString("Lyumjev", comment: "Brand name for lyumjev insulin type")
         case .afrezza:
-            return LocalizedString("Afrezza", comment: "Brand name for afrezza insulin type")
+            return LocalizedString("afrezza", comment: "Brand name for afrezza insulin type")
         }
     }
     
     public var description: String {
         switch self {
         case .novolog:
-            return LocalizedString("NovoLog (insulin aspart) is a rapid-acting insulin made by Novo Nordisk", comment: "Description for novolog insulin type")
+            return LocalizedString("Novolog（胰岛素Aspart）是Novo Nordisk制造的快速作用胰岛素", comment: "Description for novolog insulin type")
         case .humalog:
-            return LocalizedString("Humalog (insulin lispro) is a rapid-acting insulin made by Eli Lilly", comment: "Description for humalog insulin type")
+            return LocalizedString("Humalog（胰岛素lispro）是Eli Lilly制造的快速作用胰岛素", comment: "Description for humalog insulin type")
         case .apidra:
-            return LocalizedString("Apidra (insulin glulisine) is a rapid-acting insulin made by Sanofi-aventis ", comment: "Description for apidra insulin type")
+            return LocalizedString("阿皮德拉（胰岛素纤维素）是由sanofi-aventis制造的快速作用胰岛素", comment: "Description for apidra insulin type")
         case .fiasp:
-            return LocalizedString("Fiasp is a mealtime insulin aspart formulation with the addition of nicotinamide (vitamin B3) made by Novo Nordisk", comment: "Description for fiasp insulin type")
+            return LocalizedString("FIASP是一种用餐时间胰岛素阿斯帕特配方", comment: "Description for fiasp insulin type")
         case .lyumjev:
-            return LocalizedString("Lyumjev is a mealtime insulin lispro formulation with the addition of citrate and treprostinil made by Eli Lilly", comment: "Description for lyumjev insulin type")
+            return LocalizedString("lyumjev是一种用餐时间胰岛素lispro配方", comment: "Description for lyumjev insulin type")
         case .afrezza:
-            return LocalizedString("Afrezza is an ultra rapid-acting mealtime insulin that is breathed in through your lungs using an oral inhaler and made by MannKind", comment: "Description for afrezza insulin type")
+            return LocalizedString("Afrezza是一种超快速作用的进餐时间胰岛素，使用口服吸入器并由Mannkind制成", comment: "Description for afrezza insulin type")
         }
     }
     

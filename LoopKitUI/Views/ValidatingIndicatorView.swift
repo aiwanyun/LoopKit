@@ -20,7 +20,7 @@ public final class ValidatingIndicatorView: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         label.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
-        label.text = LocalizedString("Verifying", comment: "Label indicating validation is occurring")
+        label.text = LocalizedString("验证", comment: "Label indicating validation is occurring")
         label.sizeToFit()
 
         addSubview(indicatorView)

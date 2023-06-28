@@ -111,6 +111,6 @@ open class SetupTableFooterView: UIView {
 
 public extension SetupButton {
     func resetTitle() {
-        setTitle(LocalizedString("Continue", comment: "Title of the setup button to continue"), for: .normal)
+        setTitle(LocalizedString("继续", comment: "Title of the setup button to continue"), for: .normal)
     }
 }

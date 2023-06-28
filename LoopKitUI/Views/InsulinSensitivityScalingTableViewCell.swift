@@ -106,7 +106,7 @@ final class InsulinSensitivityScalingTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        titleLabel.text = LocalizedString("Overall Insulin Needs", comment: "The title text for the insulin sensitivity scaling setting")
+        titleLabel.text = LocalizedString("总体胰岛素需求", comment: "The title text for the insulin sensitivity scaling setting")
 
         selectedPercentage = 100
         setSelected(true, animated: false)
@@ -148,7 +148,7 @@ final class InsulinSensitivityScalingTableViewCell: UITableViewCell {
                 String(delta)
             )
         } else {
-            footerText = LocalizedString("Basal, bolus, and correction insulin dose amounts are unaffected.", comment: "Describes a lack of change in overall insulin needs")
+            footerText = LocalizedString("基础，推注和矫正胰岛素剂量量不受影响。", comment: "Describes a lack of change in overall insulin needs")
         }
 
         footerLabel.text = footerText

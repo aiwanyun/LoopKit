@@ -77,7 +77,7 @@ fileprivate extension TherapySetting {
         case .glucoseTargetRange:
             return lowHighText(for: Guardrail.correctionRange)
         case .preMealCorrectionRangeOverride:
-            return lowHighText(lowerBoundString: LocalizedString("your Glucose Safety Limit", comment: "Lower bound pre-meal information text"),
+            return lowHighText(lowerBoundString: LocalizedString("您的葡萄糖安全限制", comment: "Lower bound pre-meal information text"),
                                upperBoundString: Guardrail.premealCorrectionRangeMaximum.bothUnitsString)
         case .workoutCorrectionRangeOverride:
             return lowHighText(

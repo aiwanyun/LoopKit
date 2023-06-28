@@ -11,30 +11,30 @@ public extension ExponentialInsulinModelPreset {
     var title: String {
         switch self {
         case .rapidActingAdult:
-            return LocalizedString("Rapid-Acting – Adults", comment: "Title of insulin model preset - rapid acting adult")
+            return LocalizedString("快速行动 - 成人", comment: "Title of insulin model preset - rapid acting adult")
         case .rapidActingChild:
-            return LocalizedString("Rapid-Acting – Children", comment: "Title of insulin model preset - rapid acting children")
+            return LocalizedString("快速行动 - 孩子", comment: "Title of insulin model preset - rapid acting children")
         case .fiasp:
-            return LocalizedString("Fiasp", comment: "Title of insulin model preset - fiasp")
+            return LocalizedString("fiasp", comment: "Title of insulin model preset - fiasp")
         case .lyumjev:
             return LocalizedString("Lyumjev", comment: "Title of insulin model preset - lyumjev")
         case .afrezza:
-            return LocalizedString("Afrezza", comment: "Title of insulin model preset - afrezza")
+            return LocalizedString("afrezza", comment: "Title of insulin model preset - afrezza")
         }
     }
 
     var subtitle: String {
         switch self {
         case .rapidActingAdult:
-            return LocalizedString("This model assumes peak insulin activity at 75 minutes.", comment: "Subtitle of Rapid-Acting – Adult preset")
+            return LocalizedString("该模型假设在75分钟时峰值胰岛素活性。", comment: "Subtitle of Rapid-Acting – Adult preset")
         case .rapidActingChild:
-            return LocalizedString("This model assumes peak insulin activity at 65 minutes.", comment: "Subtitle of Rapid-Acting – Children preset")
+            return LocalizedString("该模型假定在65分钟时峰值胰岛素活性。", comment: "Subtitle of Rapid-Acting – Children preset")
         case .fiasp:
-            return LocalizedString("This model assumes peak insulin activity at 55 minutes.", comment: "Subtitle of Fiasp preset")
+            return LocalizedString("该模型假设在55分钟时峰值胰岛素活性。", comment: "Subtitle of Fiasp preset")
         case .lyumjev:
-            return LocalizedString("This model assumes peak insulin activity at 55 minutes.", comment: "Subtitle of Lyumjev preset")
+            return LocalizedString("该模型假设在55分钟时峰值胰岛素活性。", comment: "Subtitle of Lyumjev preset")
         case .afrezza:
-            return LocalizedString("This model assumes peak insulin activity at 19 minutes.", comment: "Subtitle of afrezza preset")
+            return LocalizedString("该模型假设在19分钟时峰值胰岛素活性。", comment: "Subtitle of afrezza preset")
         }
     }
 }
@@ -42,7 +42,7 @@ public extension ExponentialInsulinModelPreset {
 
 public extension WalshInsulinModel {
     static var title: String {
-        return LocalizedString("Walsh", comment: "Title of insulin model setting")
+        return LocalizedString("沃尔什", comment: "Title of insulin model setting")
     }
     
     var title: String {
@@ -50,7 +50,7 @@ public extension WalshInsulinModel {
     }
 
     static var subtitle: String {
-        return LocalizedString("The legacy model used by Loop, allowing customization of action duration.", comment: "Subtitle description of Walsh insulin model setting")
+        return LocalizedString("循环使用的旧模型，允许自定义动作持续时间。", comment: "Subtitle description of Walsh insulin model setting")
     }
     
     var subtitle: String {

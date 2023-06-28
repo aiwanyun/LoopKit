@@ -28,11 +28,11 @@ public enum DeviceStatusElementState: String, Codable {
     public var localizedDescription: String {
         switch self {
         case .critical:
-            return LocalizedString("Device Status Critical", comment: "Accessibility label for device status critical state")
+            return LocalizedString("设备状态关键", comment: "Accessibility label for device status critical state")
         case .normalCGM, .normalPump:
-            return LocalizedString("Device Status Normal", comment: "Accessibility label for device status normal state")
+            return LocalizedString("设备状态正常", comment: "Accessibility label for device status normal state")
         case .warning:
-            return LocalizedString("Device Status Warning", comment: "Accessibility label for device status warning state")
+            return LocalizedString("设备状态警告", comment: "Accessibility label for device status warning state")
         }
     }
 }

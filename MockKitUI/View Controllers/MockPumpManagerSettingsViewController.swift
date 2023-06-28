@@ -372,7 +372,7 @@ final class MockPumpManagerSettingsViewController: UITableViewController {
                 let vc = DismissibleHostingController(rootView: view) {
                     tableView.reloadRows(at: [indexPath], with: .automatic)
                 }
-                vc.title = LocalizedString("Insulin Type", comment: "Controller title for insulin type selection screen")
+                vc.title = LocalizedString("胰岛素类型", comment: "Controller title for insulin type selection screen")
                 show(vc, sender: sender)
             case .reservoirRemaining:
                 let vc = TextFieldTableViewController()
@@ -431,7 +431,7 @@ final class MockPumpManagerSettingsViewController: UITableViewController {
             pumpManager.resumeDelivery { (error) in
                 if let error = error {
                     DispatchQueue.main.async {
-                        let title = LocalizedString("Error Resuming", comment: "The alert title for a resume error")
+                        let title = LocalizedString("恢复错误", comment: "The alert title for a resume error")
                         self.present(UIAlertController(with: error, title: title), animated: true)
                     }
                 }
@@ -440,7 +440,7 @@ final class MockPumpManagerSettingsViewController: UITableViewController {
             pumpManager.suspendDelivery { (error) in
                 if let error = error {
                     DispatchQueue.main.async {
-                        let title = LocalizedString("Error Suspending", comment: "The alert title for a suspend error")
+                        let title = LocalizedString("暂停错误", comment: "The alert title for a suspend error")
                         self.present(UIAlertController(with: error, title: title), animated: true)
                     }
                 }
@@ -581,7 +581,7 @@ private extension UIAlertController {
         )
 
         addAction(UIAlertAction(
-            title: LocalizedString("OK", comment: "Button title to acknowledge error"),
+            title: LocalizedString("好的", comment: "Button title to acknowledge error"),
             style: .default,
             handler: nil
         ))

@@ -173,22 +173,22 @@ private class FoodEmojiDataSource: EmojiDataSource {
     init() {
         sections = [
             EmojiSection(
-                title: LocalizedString("Fast", comment: "Section title for fast absorbing food"),
+                title: LocalizedString("快速地", comment: "Section title for fast absorbing food"),
                 items: type(of: self).fast,
                 indexSymbol: " 🍭 "
             ),
             EmojiSection(
-                title: LocalizedString("Medium", comment: "Section title for medium absorbing food"),
+                title: LocalizedString("中等的", comment: "Section title for medium absorbing food"),
                 items: type(of: self).medium,
                 indexSymbol: "🌮"
             ),
             EmojiSection(
-                title: LocalizedString("Slow", comment: "Section title for slow absorbing food"),
+                title: LocalizedString("慢的", comment: "Section title for slow absorbing food"),
                 items: type(of: self).slow,
                 indexSymbol: "🍕"
             ),
             EmojiSection(
-                title: LocalizedString("Other", comment: "Section title for no-carb food"),
+                title: LocalizedString("其他", comment: "Section title for no-carb food"),
                 items: type(of: self).other,
                 indexSymbol: "⋯ "
             )

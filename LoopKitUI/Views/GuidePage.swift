@@ -46,14 +46,14 @@ public struct GuidePage<Content, ActionAreaContent>: View where Content: View, A
 struct GuidePage_Previews: PreviewProvider {
     static var previews: some View {
         GuidePage(content: {
-            Text("content")
-            Text("more content")
+            Text("内容")
+            Text("更多内容")
             Image(systemName: "circle")
         }) {
             Button(action: {
                 print("Button tapped")
             }) {
-                Text("Action Button")
+                Text("动作按钮")
                     .actionButtonStyle()
             }
         }

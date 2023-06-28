@@ -43,7 +43,7 @@ public struct LabeledNumberInput: View {
         _value = value
         self.font = font
         self.label = label
-        self.placeholder = placeholder ?? LocalizedString("Value", comment: "Placeholder text until value is entered")
+        self.placeholder = placeholder ?? LocalizedString("价值", comment: "Placeholder text until value is entered")
         self.allowFractions = allowFractions
         self.shouldBecomeFirstResponder = shouldBecomeFirstResponder
     }

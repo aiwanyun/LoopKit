@@ -37,7 +37,7 @@ extension UIAlertController {
 
             if let helpAnchor = error.helpAnchor, let url = URL(string: helpAnchor), let helpAnchorHandler = helpAnchorHandler {
                 actions.append(UIAlertAction(
-                    title: LocalizedString("More Info", comment: "Alert action title to open error help"),
+                    title: LocalizedString("更多信息", comment: "Alert action title to open error help"),
                     style: .default,
                     handler: { (_) in helpAnchorHandler(url) }
                 ))
@@ -57,7 +57,7 @@ extension UIAlertController {
         self.init(title: title ?? errorTitle, message: message, preferredStyle: .alert)
 
         let action = UIAlertAction(
-            title: LocalizedString("com.loudnate.LoopKit.errorAlertActionTitle", value: "OK", comment: "The title of the action used to dismiss an error alert"), style: .default)
+            title: LocalizedString("com.loudnate.loopkit.erroralertactionTitle", value: "OK", comment: "The title of the action used to dismiss an error alert"), style: .default)
         addAction(action)
         self.preferredAction = action
 

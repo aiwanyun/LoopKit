@@ -45,11 +45,11 @@ public struct InsulinModelInformationView: View {
             Text(String(format: LocalizedString("You can choose how %1$@ measures rapid acting insulin's peak activity according to one of these two insulin models.", comment: "Information about insulin model (1: app name)"), appName))
             HStack(spacing: 10) {
                 bulletCircle
-                Text(LocalizedString("The rapid-acting adult model assumes peak activity at 75 minutes.", comment: "Information about adult insulin model"))
+                Text(LocalizedString("快速作用的成人模型在75分钟时假设峰值活性。", comment: "Information about adult insulin model"))
             }
             HStack(spacing: 10) {
                 bulletCircle
-                Text(LocalizedString("The rapid-acting child model assumes peak activity at 65 minutes.", comment: "Information about child insulin model"))
+                Text(LocalizedString("快速作用的儿童模型在65分钟时假设峰值活性。", comment: "Information about child insulin model"))
             }
         }
     }

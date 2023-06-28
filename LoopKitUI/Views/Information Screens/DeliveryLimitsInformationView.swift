@@ -38,7 +38,7 @@ public struct DeliveryLimitsInformationView: View {
     }
     
     private var deliveryLimitDescription: some View {
-        Text(LocalizedString("Delivery Limits are safety guardrails for your insulin delivery.", comment: "Information about delivery limits"))
+        Text(LocalizedString("交付限制是您的胰岛素输送的安全护栏。", comment: "Information about delivery limits"))
         .foregroundColor(.secondary)
     }
     
@@ -48,8 +48,8 @@ public struct DeliveryLimitsInformationView: View {
             .font(.headline)
             VStack(alignment: .leading, spacing: 20) {
                 Text(String(format: LocalizedString("Maximum Basal Rate is the maximum automatically adjusted basal rate that %1$@ is allowed to enact to help reach your correction range.", comment: "Information about maximum basal rate (1: app name)"), appName))
-                Text(LocalizedString("Some users choose a value 2, 3, or 4 times their highest scheduled basal rate.", comment: "Information about typical maximum basal rates"))
-                Text(LocalizedString("Work with your healthcare provider to choose a value that is higher than your highest scheduled basal rate, but as conservative or aggressive as you feel comfortable.", comment: "Disclaimer"))
+                Text(LocalizedString("一些用户选择一个值2、3或4倍的基础速率。", comment: "Information about typical maximum basal rates"))
+                Text(LocalizedString("与您的医疗保健提供商合作，选择一个高于您计划的最高基础价格的价值，但是您感到舒适，但保守或积极进取。", comment: "Disclaimer"))
             }
             .foregroundColor(.secondary)
         }

@@ -158,7 +158,7 @@ struct InsulinStatusView: View {
                         .frame(width: 23, height: 34, alignment: .bottom)
                 }
                 HStack(alignment: .firstTextBaseline, spacing: 3) {
-                    Text("50+")
+                    Text("50")
                         .font(.system(size: 28))
                         .fontWeight(.heavy)
                         .fixedSize()
@@ -167,7 +167,7 @@ struct InsulinStatusView: View {
                         .foregroundColor(.secondary)
                 }
             }
-            Text("Estimated Reading")
+            Text("估计阅读")
                 .font(.footnote)
                 .foregroundColor(.accentColor)
         }

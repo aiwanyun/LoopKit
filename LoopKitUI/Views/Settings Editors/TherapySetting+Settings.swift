@@ -15,7 +15,7 @@ extension TherapySetting {
         switch self {
         default:
             // Currently, this is the same no matter what the setting is.
-            return LocalizedString("Authenticate to save therapy setting", comment: "Authentication hint string for therapy settings")
+            return LocalizedString("验证以保存治疗设置", comment: "Authentication hint string for therapy settings")
         }
     }
     
@@ -40,7 +40,7 @@ extension TherapySetting {
         case .insulinSensitivity:
             return AnyView(InsulinSensitivityInformationView(onExit: nil, mode: .settings))
         case .none:
-            return AnyView(Text("To be implemented"))
+            return AnyView(Text("将要执行"))
         }
     }
 }

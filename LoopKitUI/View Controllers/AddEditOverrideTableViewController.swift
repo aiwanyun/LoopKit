@@ -248,7 +248,7 @@ public final class AddEditOverrideTableViewController: UITableViewController {
             switch propertyRow(for: indexPath) {
             case .symbol:
                 let cell = tableView.dequeueReusableCell(withIdentifier: LabeledTextFieldTableViewCell.className, for: indexPath) as! LabeledTextFieldTableViewCell
-                cell.titleLabel.text = LocalizedString("Symbol", comment: "The text for the custom preset symbol setting")
+                cell.titleLabel.text = LocalizedString("象征", comment: "The text for the custom preset symbol setting")
                 cell.textField.text = symbol
                 cell.textField.placeholder = SettingsTableViewCell.NoValueString
                 cell.maximumTextLength = 2
@@ -257,9 +257,9 @@ public final class AddEditOverrideTableViewController: UITableViewController {
                 return cell
             case .name:
                 let cell = tableView.dequeueReusableCell(withIdentifier: LabeledTextFieldTableViewCell.className, for: indexPath) as! LabeledTextFieldTableViewCell
-                cell.titleLabel.text = LocalizedString("Name", comment: "The text for the custom preset name setting")
+                cell.titleLabel.text = LocalizedString("姓名", comment: "The text for the custom preset name setting")
                 cell.textField.text = name
-                cell.textField.placeholder = LocalizedString("Running", comment: "The text for the custom preset name field placeholder")
+                cell.textField.placeholder = LocalizedString("跑步", comment: "The text for the custom preset name field placeholder")
                 cell.delegate = self
                 return cell
             case .insulinNeeds:
@@ -270,14 +270,14 @@ public final class AddEditOverrideTableViewController: UITableViewController {
             case .targetRange:
                 let cell = tableView.dequeueReusableCell(withIdentifier: DoubleRangeTableViewCell.className, for: indexPath) as! DoubleRangeTableViewCell
                 cell.numberFormatter = quantityFormatter.numberFormatter
-                cell.titleLabel.text = LocalizedString("Target Range", comment: "The text for the custom preset target range setting")
+                cell.titleLabel.text = LocalizedString("目标范围", comment: "The text for the custom preset target range setting")
                 cell.range = targetRange
                 cell.unitLabel.text = quantityFormatter.localizedUnitStringWithPlurality()
                 cell.delegate = self
                 return cell
             case .startDate:
                 let cell = tableView.dequeueReusableCell(withIdentifier: DateAndDurationTableViewCell.className, for: indexPath) as! DateAndDurationTableViewCell
-                cell.titleLabel.text = LocalizedString("Start Time", comment: "The text for the custom preset start time")
+                cell.titleLabel.text = LocalizedString("开始时间", comment: "The text for the custom preset start time")
                 cell.datePicker.datePickerMode = .dateAndTime
                 cell.datePicker.preferredDatePickerStyle = .wheels
                 cell.datePicker.minimumDate = min(startDate, Date())
@@ -290,31 +290,31 @@ public final class AddEditOverrideTableViewController: UITableViewController {
                 }
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: DateAndDurationTableViewCell.className, for: indexPath) as! DateAndDurationTableViewCell
-                cell.titleLabel.text = LocalizedString("End Time", comment: "The text for the override start time")
+                cell.titleLabel.text = LocalizedString("时间结束", comment: "The text for the override start time")
                 cell.datePicker.datePickerMode = .dateAndTime
                 cell.date = override.actualEndDate
                 return cell
             case .durationFiniteness:
                 let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.className, for: indexPath) as! SwitchTableViewCell
                 cell.selectionStyle = .none
-                cell.textLabel?.text = LocalizedString("Enable Indefinitely", comment: "The text for the indefinite custom preset duration setting")
+                cell.textLabel?.text = LocalizedString("无限期启用", comment: "The text for the indefinite custom preset duration setting")
                 cell.switch?.isOn = !duration.isFinite
                 cell.switch?.addTarget(self, action: #selector(durationFinitenessChanged), for: .valueChanged)
                 return cell
             case .duration:
                 let cell = tableView.dequeueReusableCell(withIdentifier: DateAndDurationTableViewCell.className, for: indexPath) as! DateAndDurationTableViewCell
-                cell.titleLabel.text = LocalizedString("Duration", comment: "The text for the custom preset duration setting")
+                cell.titleLabel.text = LocalizedString("期间", comment: "The text for the custom preset duration setting")
                 cell.datePicker.datePickerMode = .countDownTimer
                 guard case .finite(let duration) = duration else {
                     preconditionFailure("Duration should only be selectable when duration is finite")
                 }
                 // Use the actual duration if we're retrospectively viewing overrides
                 if case let .viewOverride(override) = inputMode {
-                    cell.titleLabel.text = LocalizedString("Active Duration", comment: "The text for the override history duration")
+                    cell.titleLabel.text = LocalizedString("活动持续时间", comment: "The text for the override history duration")
                     cell.datePicker.minuteInterval = 1
                     cell.duration = override.actualEndDate.timeIntervalSince(override.startDate)
                 } else {
-                    cell.titleLabel.text = LocalizedString("Duration", comment: "The text for the override duration setting")
+                    cell.titleLabel.text = LocalizedString("期间", comment: "The text for the override duration setting")
                     cell.datePicker.minuteInterval = 15
                     cell.duration = duration
                 }
@@ -325,9 +325,9 @@ public final class AddEditOverrideTableViewController: UITableViewController {
         case .cancel:
             let cell = tableView.dequeueReusableCell(withIdentifier: TextButtonTableViewCell.className, for: indexPath) as! TextButtonTableViewCell
             if startDate > Date() {
-                cell.textLabel?.text = LocalizedString("Cancel", comment: "The text for the scheduled custom preset cancel button")
+                cell.textLabel?.text = LocalizedString("取消", comment: "The text for the scheduled custom preset cancel button")
             } else {
-                cell.textLabel?.text = LocalizedString("Disable Preset", comment: "The text for the custom preset disable button")
+                cell.textLabel?.text = LocalizedString("禁用预设", comment: "The text for the custom preset disable button")
             }
             cell.textLabel?.textAlignment = .center
             cell.tintColor = .defaultButtonTextColor
@@ -454,15 +454,15 @@ extension AddEditOverrideTableViewController {
         } else {
             switch inputMode {
             case .newPreset:
-                title = LocalizedString("New Preset", comment: "The title for the new custom preset entry screen")
+                title = LocalizedString("新预设", comment: "The title for the new custom preset entry screen")
             case .editPreset, .customizePresetOverride:
                 assertionFailure("Editing or customizing a preset means we'll have a symbol and a name")
             case .customOverride:
-                title = LocalizedString("Custom Preset", comment: "The title for the custom preset entry screen")
+                title = LocalizedString("自定义预设", comment: "The title for the custom preset entry screen")
             case .editOverride:
-                title = LocalizedString("Edit", comment: "The title for the enabled custom preset editing screen")
+                title = LocalizedString("编辑", comment: "The title for the enabled custom preset editing screen")
             case .viewOverride:
-                title = LocalizedString("View Override", comment: "The title for the override editing screen")
+                title = LocalizedString("查看覆盖", comment: "The title for the override editing screen")
             }
         }
     }
@@ -472,7 +472,7 @@ extension AddEditOverrideTableViewController {
         case .newPreset, .editPreset, .editOverride:
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(save))
         case .customizePresetOverride, .customOverride:
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: LocalizedString("Enable", comment: "The button text for enabling a temporary override"), style: .done, target: self, action: #selector(save))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: LocalizedString("使能够", comment: "The button text for enabling a temporary override"), style: .done, target: self, action: #selector(save))
         case .viewOverride: break
         }
 

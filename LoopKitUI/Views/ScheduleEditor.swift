@@ -241,7 +241,7 @@ struct ScheduleEditor<Value: Equatable, ValueContent: View, ValuePicker: View, A
     
     private var unsupportedValueWarning: some View {
         WarningView(title: Text("Unsupported \(title)"),
-                    caption: Text(LocalizedString("Correct the highlighted unsupported value(s).", comment: "Instruction to correct unsupported value")))
+                    caption: Text(LocalizedString("更正突出显示的无支撑值。", comment: "Instruction to correct unsupported value")))
     }
 
 
@@ -357,10 +357,10 @@ struct ScheduleEditor<Value: Equatable, ValueContent: View, ValuePicker: View, A
         }
     }
 
-    private var backButtonTitle: String { LocalizedString("Back", comment: "Back navigation button title") }
+    private var backButtonTitle: String { LocalizedString("后退", comment: "Back navigation button title") }
 
     var cancelButton: some View {
-        Button(action: { self.dismiss() } ) { Text(LocalizedString("Cancel", comment: "Cancel editing settings button title")) }
+        Button(action: { self.dismiss() } ) { Text(LocalizedString("取消", comment: "Cancel editing settings button title")) }
     }
 
     var editButton: some View {
@@ -371,7 +371,7 @@ struct ScheduleEditor<Value: Equatable, ValueContent: View, ValuePicker: View, A
                 }
             },
             label: {
-                Text(LocalizedString("Edit", comment: "Text for edit button"))
+                Text(LocalizedString("编辑", comment: "Text for edit button"))
             }
         )
         .disabled(scheduleItems.count == 1)
@@ -385,7 +385,7 @@ struct ScheduleEditor<Value: Equatable, ValueContent: View, ValuePicker: View, A
                 }
             },
             label: {
-                Text(LocalizedString("Done", comment: "Text for done button")).bold()
+                Text(LocalizedString("完毕", comment: "Text for done button")).bold()
             }
         )
     }
@@ -450,15 +450,15 @@ struct ScheduleEditor<Value: Equatable, ValueContent: View, ValuePicker: View, A
             return Alert(
                 title: content.title,
                 message: content.message,
-                primaryButton: .cancel(Text(LocalizedString("Go Back", comment: "Button text to return to editing a schedule after from alert popup when some schedule values are outside the recommended range"))),
+                primaryButton: .cancel(Text(LocalizedString("回去", comment: "Button text to return to editing a schedule after from alert popup when some schedule values are outside the recommended range"))),
                 secondaryButton: .default(
-                    Text(LocalizedString("Continue", comment: "Button text to confirm saving from alert popup when some schedule values are outside the recommended range")),
+                    Text(LocalizedString("继续", comment: "Button text to confirm saving from alert popup when some schedule values are outside the recommended range")),
                     action: startSaving
                 )
             )
         case .saveError(let error):
             return Alert(
-                title: Text(LocalizedString("Unable to Save", comment: "Alert title when error occurs while saving a schedule")),
+                title: Text(LocalizedString("无法保存", comment: "Alert title when error occurs while saving a schedule")),
                 message: Text(error.localizedDescription)
             )
         }

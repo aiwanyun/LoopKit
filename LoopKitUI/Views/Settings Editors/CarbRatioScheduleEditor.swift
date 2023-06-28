@@ -80,7 +80,7 @@ public struct CarbRatioScheduleEditor: View {
 
     private var confirmationAlertContent: AlertContent {
         AlertContent(
-            title: Text(LocalizedString("Save Carb Ratios?", comment: "Alert title for confirming carb ratios outside the recommended range")),
+            title: Text(LocalizedString("节省碳水化合物比？", comment: "Alert title for confirming carb ratios outside the recommended range")),
             message: Text(TherapySetting.carbRatio.guardrailSaveWarningCaption)
         )
     }
@@ -101,13 +101,13 @@ private struct CarbRatioGuardrailWarning: View {
     private func singularWarningTitle(for threshold: SafetyClassification.Threshold) -> Text {
         switch threshold {
         case .minimum, .belowRecommended:
-            return Text(LocalizedString("Low Carb Ratio", comment: "Title text for the low carb ratio warning"))
+            return Text(LocalizedString("低碳水化合物比", comment: "Title text for the low carb ratio warning"))
         case .aboveRecommended, .maximum:
-            return Text(LocalizedString("High Carb Ratio", comment: "Title text for the high carb ratio warning"))
+            return Text(LocalizedString("高碳水化合物比", comment: "Title text for the high carb ratio warning"))
         }
     }
 
     private var multipleWarningTitle: Text {
-        Text(LocalizedString("Carb Ratios", comment: "Title text for multi-value carb ratio warning"))
+        Text(LocalizedString("碳水化合物比率", comment: "Title text for multi-value carb ratio warning"))
     }
 }

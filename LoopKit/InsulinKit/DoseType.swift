@@ -19,15 +19,15 @@ public enum DoseType: String, CaseIterable {
     public var localizedDescription: String {
         switch self {
         case .basal:
-            return LocalizedString("Basal", comment: "Title for basal dose type")
+            return LocalizedString("基础", comment: "Title for basal dose type")
         case .bolus:
-            return LocalizedString("Bolus", comment: "Title for bolus dose type")
+            return LocalizedString("推注", comment: "Title for bolus dose type")
         case .tempBasal:
-            return LocalizedString("Temp Basal", comment: "Title for temp basal dose type")
+            return LocalizedString("温度基", comment: "Title for temp basal dose type")
         case .suspend:
-            return LocalizedString("Suspended", comment: "Title for suspend dose type")
+            return LocalizedString("暂停", comment: "Title for suspend dose type")
         case .resume:
-            return LocalizedString("Resumed", comment: "Title for resume dose type")
+            return LocalizedString("恢复", comment: "Title for resume dose type")
         }
     }
 }

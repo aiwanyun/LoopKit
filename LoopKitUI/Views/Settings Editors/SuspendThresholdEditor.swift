@@ -84,7 +84,7 @@ public struct SuspendThresholdEditor: View {
     }
     
     private var cancelButton: some View {
-        Button(action: { self.dismiss() } ) { Text(LocalizedString("Cancel", comment: "Cancel editing settings button title")) }
+        Button(action: { self.dismiss() } ) { Text(LocalizedString("取消", comment: "Cancel editing settings button title")) }
     }
 
     private var picker: GlucoseValuePicker {
@@ -159,7 +159,7 @@ public struct SuspendThresholdEditor: View {
 
     private var instructionalContent: some View {
         HStack { // to align with guardrail warning, if present
-            Text(LocalizedString("You can edit the setting by tapping into the line item.", comment: "Description of how to edit setting"))
+            Text(LocalizedString("您可以通过利用订单项来编辑设置。", comment: "Description of how to edit setting"))
             .foregroundColor(.secondary)
             .font(.subheadline)
             Spacer()
@@ -186,11 +186,11 @@ public struct SuspendThresholdEditor: View {
 
     private func confirmationAlert() -> SwiftUI.Alert {
         SwiftUI.Alert(
-            title: Text(LocalizedString("Save Glucose Safety Limit?", comment: "Alert title for confirming a glucose safety limit outside the recommended range")),
+            title: Text(LocalizedString("节省葡萄糖安全限制？", comment: "Alert title for confirming a glucose safety limit outside the recommended range")),
             message: Text(TherapySetting.suspendThreshold.guardrailSaveWarningCaption),
-            primaryButton: .cancel(Text(LocalizedString("Go Back", comment: "Text for go back action on confirmation alert"))),
+            primaryButton: .cancel(Text(LocalizedString("回去", comment: "Text for go back action on confirmation alert"))),
             secondaryButton: .default(
-                Text(LocalizedString("Continue", comment: "Text for continue action on confirmation alert")),
+                Text(LocalizedString("继续", comment: "Text for continue action on confirmation alert")),
                 action: startSaving
             )
         )
@@ -224,9 +224,9 @@ struct SuspendThresholdGuardrailWarning: View {
     private var title: Text {
         switch safetyClassificationThreshold {
         case .minimum, .belowRecommended:
-            return Text(LocalizedString("Low Glucose Safety Limit", comment: "Title text for the low glucose safety limit warning"))
+            return Text(LocalizedString("低葡萄糖安全极限", comment: "Title text for the low glucose safety limit warning"))
         case .aboveRecommended, .maximum:
-            return Text(LocalizedString("High Glucose Safety Limit", comment: "Title text for the high glucose safety limit warning"))
+            return Text(LocalizedString("高葡萄糖安全极限", comment: "Title text for the high glucose safety limit warning"))
         }
     }
 }

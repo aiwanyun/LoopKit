@@ -271,7 +271,7 @@ public class InsulinSensitivityScheduleViewController : DailyValueScheduleTableV
             return cell
         case .save:
             let cell = tableView.dequeueReusableCell(withIdentifier: TextButtonTableViewCell.className, for: indexPath) as! TextButtonTableViewCell
-            cell.textLabel?.text = LocalizedString("Save", comment: "Button text for saving insulin sensitivity schedule")
+            cell.textLabel?.text = LocalizedString("节省", comment: "Button text for saving insulin sensitivity schedule")
             cell.isEnabled = isScheduleModified && isScheduleValid
 
             return cell
@@ -281,7 +281,7 @@ public class InsulinSensitivityScheduleViewController : DailyValueScheduleTableV
     open override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         switch Section(rawValue: section)! {
         case .schedule:
-            return LocalizedString("Insulin sensitivity describes how your blood glucose should respond to a 1 Unit dose of insulin. Smaller values mean more insulin will be given when above target. Values that are too small can cause dangerously low blood glucose.", comment: "The description shown on the insulin sensitivity schedule interface.")
+            return LocalizedString("胰岛素敏感性描述了您的血糖应如何应对1单位剂量的胰岛素。较小的值意味着在目标上方时将给予更多的胰岛素。太小的值会导致危险的低血糖。", comment: "The description shown on the insulin sensitivity schedule interface.")
         case .save:
             return nil
         }

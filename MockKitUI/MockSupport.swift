@@ -92,16 +92,16 @@ extension MockSupport {
                                                     
                                                     Go to %2$@ Settings > Software Update to complete.
                                                     """, comment: "Alert content body for first software update alert (1: app name)(2: app name)"), appName, appName),
-                                         acknowledgeActionButtonLabel: LocalizedString("OK", comment: "Default acknowledgement"))
+                                         acknowledgeActionButtonLabel: LocalizedString("好的", comment: "Default acknowledgement"))
         } else if let lastVersionCheckAlertDate = lastVersionCheckAlertDate,
                   abs(lastVersionCheckAlertDate.timeIntervalSinceNow) > alertCadence {
-            alertContent = Alert.Content(title: LocalizedString("Update Reminder", comment: "Recurring software update alert title"),
+            alertContent = Alert.Content(title: LocalizedString("更新提醒", comment: "Recurring software update alert title"),
                                          body: String(format: LocalizedString("""
                                                     A software update is recommended to continue using the %1$@ app.
                                                     
                                                     Go to %2$@ Settings > Software Update to install the latest version.
                                                     """, comment: "Alert content body for recurring software update alert"), appName, appName),
-                                         acknowledgeActionButtonLabel: LocalizedString("OK", comment: "Default acknowledgement"))
+                                         acknowledgeActionButtonLabel: LocalizedString("好的", comment: "Default acknowledgement"))
         } else {
             return
         }
@@ -140,11 +140,11 @@ struct SupportMenuItem : View {
                 return ActionSheet.Button.default(Text(versionUpdate.localizedDescription), action: setter)
             }
         } +
-        [.cancel(Text("Cancel"))]
+        [.cancel(Text("取消"))]
     }
 
     private var actionSheet: ActionSheet {
-        ActionSheet(title: Text("Version Check Response"), message: Text("How should the simulator respond to a version check?"), buttons: buttons)
+        ActionSheet(title: Text("版本检查响应"), message: Text("模拟器应该如何响应版本检查？"), buttons: buttons)
     }
 
     var body: some View {
@@ -158,7 +158,7 @@ struct SupportMenuItem : View {
         })
         
         Button(action: { mockSupport.lastVersionCheckAlertDate = nil } ) {
-            Text("Clear Last Version Check Alert Date")
+            Text("清除最后版本检查警报日期")
         }
     }
     

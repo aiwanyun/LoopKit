@@ -56,7 +56,7 @@ public struct TherapySettingsView: View {
     private var cardListTitle: Text? { mode == .acceptanceFlow ? Text(therapySettingsTitle) : nil }
 
     private var therapySettingsTitle: String {
-        return LocalizedString("Therapy Settings", comment: "Therapy Settings screen title")
+        return LocalizedString("治疗环境", comment: "Therapy Settings screen title")
     }
 
     private var cardListSections: [CardListSection] {
@@ -105,7 +105,7 @@ public struct TherapySettingsView: View {
     }
     
     private var supportCardListSection: CardListSection {
-        CardListSection(title: Text(LocalizedString("Support", comment: "Title for support section"))) {
+        CardListSection(title: Text(LocalizedString("支持", comment: "Title for support section"))) {
             supportSection
         }
     }
@@ -128,7 +128,7 @@ public struct TherapySettingsView: View {
     
     private var dismissButton: some View {
         Button(action: dismissAction) {
-            Text(LocalizedString("Done", comment: "Text for dismiss button"))
+            Text(LocalizedString("完毕", comment: "Text for dismiss button"))
                 .bold()
         }
     }
@@ -154,7 +154,7 @@ extension TherapySettingsView {
         Card {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(LocalizedString("Prescription", comment: "title for prescription section"))
+                    Text(LocalizedString("处方", comment: "title for prescription section"))
                         .bold()
                     Spacer()
                     DescriptiveText(label: prescriptionDescriptiveText)
@@ -167,7 +167,7 @@ extension TherapySettingsView {
     private var summaryHeaderSection: Card {
         Card {
             VStack(alignment: .leading) {
-                Text(LocalizedString("Review and Save Settings", comment: "title for summary description section"))
+                Text(LocalizedString("查看并保存设置", comment: "title for summary description section"))
                     .bold()
                     .foregroundColor(.white)
                 Spacer()
@@ -183,11 +183,11 @@ extension TherapySettingsView {
     }
     
     private var summaryHeaderReviewText: String {
-        String(format: LocalizedString("Review your therapy settings below. If you’d like to edit any of these settings, tap Back to go back to that screen.", comment: "Description of how to interact with summary screen"))
+        String(format: LocalizedString("在下面查看您的治疗环境。如果您想编辑任何这些设置，请点击回到该屏幕。", comment: "Description of how to interact with summary screen"))
     }
     
     private var summaryHeaderEditText: String {
-        String(format: LocalizedString("If these settings look good to you, tap Save Settings to continue.", comment: "Description of how to interact with summary screen"))
+        String(format: LocalizedString("如果这些设置对您看起来不错，请点击“保存设置”以继续。", comment: "Description of how to interact with summary screen"))
     }
     
     private var prescriptionDescriptiveText: String {
@@ -285,7 +285,7 @@ extension TherapySettingsView {
                 }
                 SectionDivider()
                 HStack {
-                    Text(NSLocalizedString("Total", comment: "The text indicating Total for Daily Schedule Basal"))
+                    Text(NSLocalizedString("全部的", comment: "The text indicating Total for Daily Schedule Basal"))
                         .bold()
                         .foregroundColor(.primary)
                     Spacer()
@@ -411,7 +411,7 @@ extension TherapySettingsView {
         Section {
             NavigationLink(destination: DemoPlaceHolderView(appName: appName)) {
                 HStack {
-                    Text("Get help with Therapy Settings", comment: "Support button for Therapy Settings")
+                    Text("获得治疗设置的帮助", comment: "Support button for Therapy Settings")
                         .foregroundColor(.primary)
                     Spacer()
                     Disclosure()

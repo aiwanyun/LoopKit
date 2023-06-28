@@ -31,7 +31,7 @@ final class MockCGMManagerSettingsViewController: UITableViewController {
         self.quantityFormatter = QuantityFormatter(for: displayGlucosePreference.unit)
 
         super.init(style: .grouped)
-        title = LocalizedString("CGM Settings", comment: "Title for CGM simulator settings")
+        title = LocalizedString("CGM设置", comment: "Title for CGM simulator settings")
 
         displayGlucosePreference.$unit
             .sink { [weak self] _ in self?.tableView.reloadData() }

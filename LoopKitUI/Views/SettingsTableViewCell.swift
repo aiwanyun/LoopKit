@@ -9,9 +9,9 @@ import UIKit
 
 
 public class SettingsTableViewCell: UITableViewCell {
-    public static let EnabledString = LocalizedString("Enabled", comment: "The detail text describing an enabled setting")
-    public static let NoValueString = LocalizedString("–", comment: "The detail text representing no value")
-    public static let TapToSetString = LocalizedString("Tap to set", comment: "The empty-state text for a configuration value")
+    public static let EnabledString = LocalizedString("启用", comment: "The detail text describing an enabled setting")
+    public static let NoValueString = LocalizedString(" - ", comment: "The detail text representing no value")
+    public static let TapToSetString = LocalizedString("点击设置", comment: "The empty-state text for a configuration value")
 
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)
