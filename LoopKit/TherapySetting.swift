@@ -44,11 +44,11 @@ public extension TherapySetting {
         case .basalRate:
             return LocalizedString("基础率", comment: "Title text for basal rates")
         case .deliveryLimits:
-            return LocalizedString("交货限制", comment: "Title text for delivery limits")
+            return LocalizedString("输入限制", comment: "Title text for delivery limits")
         case .insulinModel:
             return LocalizedString("胰岛素模型", comment: "Title text for fast acting insulin model")
         case .carbRatio:
-            return LocalizedString("碳水化合物比率", comment: "Title text for carb ratios")
+            return LocalizedString("碳水系数", comment: "Title text for carb ratios")
         case .insulinSensitivity:
             return LocalizedString("胰岛素敏感性", comment: "Title text for insulin sensitivity")
         case .none:

@@ -99,7 +99,7 @@ class MasterViewController: UITableViewController {
             case .basalRate:
                 cell.textLabel?.text = NSLocalizedString("基础率", comment: "The title text for the basal rate schedule")
             case .carbRatio:
-                cell.textLabel?.text = NSLocalizedString("碳水化合物比率", comment: "The title of the carb ratios schedule screen")
+                cell.textLabel?.text = NSLocalizedString("碳水系数", comment: "The title of the carb ratios schedule screen")
             case .correctionRange:
                 cell.textLabel?.text = NSLocalizedString("更正范围", comment: "The title text for the glucose correction range schedule")
             case .insulinSensitivity:
@@ -163,7 +163,7 @@ class MasterViewController: UITableViewController {
                 let scheduleVC = DailyQuantityScheduleTableViewController()
 
                 scheduleVC.delegate = self
-                scheduleVC.title = NSLocalizedString("碳水化合物比率", comment: "The title of the carb ratios schedule screen")
+                scheduleVC.title = NSLocalizedString("碳水系数", comment: "The title of the carb ratios schedule screen")
                 scheduleVC.unit = .gram()
 
                 if let schedule = dataManager?.carbRatioSchedule {

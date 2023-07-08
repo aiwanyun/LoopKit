@@ -43,7 +43,7 @@ public extension CorrectionRangeOverrides.Preset {
     var title: String {
         switch self {
         case .preMeal:
-            return LocalizedString("预之前", comment: "Title for pre-meal mode")
+            return LocalizedString("餐前模式", comment: "Title for pre-meal mode")
         case .workout:
             return LocalizedString("锻炼", comment: "Title for workout mode")
         }

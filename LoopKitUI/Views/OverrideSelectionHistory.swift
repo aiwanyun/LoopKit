@@ -114,7 +114,7 @@ public struct OverrideSelectionHistory: View {
         case .preMeal:
             return OverrideViewCell(
                 symbol: Text("🍽"),
-                name: Text("预之前", comment: "Title for pre-meal override history cell"),
+                name: Text("餐前模式", comment: "Title for pre-meal override history cell"),
                 targetRange: Text(targetRange),
                 duration: Text(duration),
                 subtitle: Text(startTime),

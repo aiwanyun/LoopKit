@@ -108,6 +108,6 @@ private struct CarbRatioGuardrailWarning: View {
     }
 
     private var multipleWarningTitle: Text {
-        Text(LocalizedString("碳水化合物比率", comment: "Title text for multi-value carb ratio warning"))
+        Text(LocalizedString("碳水系数", comment: "Title text for multi-value carb ratio warning"))
     }
 }

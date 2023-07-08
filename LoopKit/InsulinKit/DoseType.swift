@@ -21,7 +21,7 @@ public enum DoseType: String, CaseIterable {
         case .basal:
             return LocalizedString("基础", comment: "Title for basal dose type")
         case .bolus:
-            return LocalizedString("推注", comment: "Title for bolus dose type")
+            return LocalizedString("大剂量", comment: "Title for bolus dose type")
         case .tempBasal:
             return LocalizedString("温度基", comment: "Title for temp basal dose type")
         case .suspend:

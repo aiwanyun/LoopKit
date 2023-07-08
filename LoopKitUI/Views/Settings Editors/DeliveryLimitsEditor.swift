@@ -447,7 +447,7 @@ struct DeliveryLimitsGuardrailWarning: View {
         case 2:
             return GuardrailWarning(
                 therapySetting: .deliveryLimits,
-                title: Text(LocalizedString("交货限制", comment: "Title text for crossed thresholds guardrail warning")),
+                title: Text(LocalizedString("输入限制", comment: "Title text for crossed thresholds guardrail warning")),
                 thresholds: Array(crossedThresholds.values))
         default:
             preconditionFailure("Unreachable: only two delivery limit settings exist")

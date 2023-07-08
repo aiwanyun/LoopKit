@@ -348,7 +348,7 @@ public class GlucoseRangeScheduleTableViewController: UITableViewController {
                 titleText = LocalizedString("锻炼", comment: "Title for the workout override range")
                 image = UIImage(named: "workout", in: bundle, compatibleWith: traitCollection)
             case .preMeal:
-                titleText = LocalizedString("预之前", comment: "Title for the pre-meal override range")
+                titleText = LocalizedString("餐前模式", comment: "Title for the pre-meal override range")
                 image = UIImage(named: "Pre-Meal", in: bundle, compatibleWith: traitCollection)
             default:
                 preconditionFailure("Unexpected override context \(context)")
