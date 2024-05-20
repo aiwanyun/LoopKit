@@ -323,7 +323,7 @@ extension GlucoseRangeTableViewCell: UIPickerViewDelegate {
                 title = valueNumberFormatter.string(from: allowedMaxValues[row])
             }
         case .separator:
-            title = LocalizedString(" - ", comment: "Separator between min and max glucose values")
+            title = LocalizedString("-", comment: "Separator between min and max glucose values")
         case .units:
             title = unitString
         }

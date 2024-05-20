@@ -345,10 +345,10 @@ public class GlucoseRangeScheduleTableViewController: UITableViewController {
 
             switch context {
             case .legacyWorkout:
-                titleText = LocalizedString("锻炼", comment: "Title for the workout override range")
+                titleText = LocalizedString("Workout", comment: "Title for the workout override range")
                 image = UIImage(named: "workout", in: bundle, compatibleWith: traitCollection)
             case .preMeal:
-                titleText = LocalizedString("餐前模式", comment: "Title for the pre-meal override range")
+                titleText = LocalizedString("Pre-Meal", comment: "Title for the pre-meal override range")
                 image = UIImage(named: "Pre-Meal", in: bundle, compatibleWith: traitCollection)
             default:
                 preconditionFailure("Unexpected override context \(context)")
@@ -364,7 +364,7 @@ public class GlucoseRangeScheduleTableViewController: UITableViewController {
         case .save:
             let cell = tableView.dequeueReusableCell(withIdentifier: TextButtonTableViewCell.className, for: indexPath) as! TextButtonTableViewCell
 
-            cell.textLabel?.text = LocalizedString("节省", comment: "Button text for saving glucose correction range schedule")
+            cell.textLabel?.text = LocalizedString("保存", comment: "Button text for saving glucose correction range schedule")
             cell.isEnabled = isScheduleModified
             return cell
         }
@@ -445,7 +445,7 @@ public class GlucoseRangeScheduleTableViewController: UITableViewController {
     public override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         switch sections[section] {
         case .schedule:
-            return LocalizedString("校正范围是您希望循环校正的血糖范围。", comment: "The section footer of correction range schedule")
+            return LocalizedString("校正范围是您希望闭环校正的血糖范围。", comment: "The section footer of correction range schedule")
         default:
             return nil
         }

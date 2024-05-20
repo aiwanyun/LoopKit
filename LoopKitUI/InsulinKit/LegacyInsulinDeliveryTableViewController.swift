@@ -36,7 +36,7 @@ public final class LegacyInsulinDeliveryTableViewController: UITableViewControll
             let titleFont = UIFont.systemFont(ofSize: 15, weight: .semibold)
             dataSourceSegmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: titleFont], for: .normal)
             dataSourceSegmentedControl.setTitle(LocalizedString("事件历史", comment: "Segmented button title for insulin delivery log event history"), forSegmentAt: 0)
-            dataSourceSegmentedControl.setTitle(LocalizedString("水库", comment: "Segmented button title for insulin delivery log reservoir history"), forSegmentAt: 1)
+            dataSourceSegmentedControl.setTitle(LocalizedString("储液器", comment: "Segmented button title for insulin delivery log reservoir history"), forSegmentAt: 1)
         }
     }
 
@@ -512,7 +512,7 @@ extension DoseEntry {
             if let deliveredUnits = deliveredUnits,
                deliveredUnits != programmedUnits
             {
-                description = String(format: LocalizedString("已中断 %1$@: <b>%2$@</b> of %3$@ %4$@", comment: "Description of an interrupted bolus dose entry (1: title for dose type, 2: value (? if no value) in bold, 3: programmed value (? if no value), 4: unit)"), type.localizedDescription, numberFormatter.string(from: deliveredUnits) ?? "?", numberFormatter.string(from: programmedUnits) ?? "?", DoseEntry.units.shortLocalizedUnitString())
+                description = String(format: LocalizedString("Interrupted %1$@: <b>%2$@</b> of %3$@ %4$@", comment: "Description of an interrupted bolus dose entry (1: title for dose type, 2: value (? if no value) in bold, 3: programmed value (? if no value), 4: unit)"), type.localizedDescription, numberFormatter.string(from: deliveredUnits) ?? "?", numberFormatter.string(from: programmedUnits) ?? "?", DoseEntry.units.shortLocalizedUnitString())
             } else {
                 description = String(format: LocalizedString("%1$@: <b>%2$@</b> %3$@", comment: "Description of a bolus dose entry (1: title for dose type, 2: value (? if no value) in bold, 3: unit)"), type.localizedDescription, numberFormatter.string(from: programmedUnits) ?? "?", DoseEntry.units.shortLocalizedUnitString())
             }

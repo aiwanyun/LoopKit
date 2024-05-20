@@ -19,7 +19,7 @@ struct DeliveryUncertaintyRecoveryView: View, HorizontalSizeClassOverride {
     var body: some View {
         NavigationView {
             GuidePage(content: {
-                Text("\(self.appName) 自此以来一直无法与模拟器泵通信 \(self.uncertaintyDateLocalizedString).\n\n如果没有通信，应用程序无法继续发送胰岛素输送命令或显示有关您的活性胰岛素或正在输送的胰岛素的准确的最新信息。")
+                Text("\(self.appName) has been unable to communicate with the Simulator Pump since \(self.uncertaintyDateLocalizedString).\n\nWithout communication, the app cannot continue to send commands for insulin delivery or display accurate, recent information about your active insulin or the insulin being delivered.")
             }) {
                 Button(action: {
                     self.recoverCommsTapped()
@@ -59,25 +59,42 @@ struct DeliveryUncertaintyRecoveryView_Previews: PreviewProvider {
     }
 }
 
+struct _DeliveryUncertaintyRecoveryView: View {
+    
+    let appName: String
+    let uncertaintyStartedAt: Date
+    let recoverCommsTapped: () -> Void
+    
+    var dismiss: () -> Void = {}
+    
+    var body: some View {
+        DeliveryUncertaintyRecoveryView(
+            appName: appName,
+            uncertaintyStartedAt: uncertaintyStartedAt
+        ) {
+            recoverCommsTapped()
+            dismiss()
+        }
+        .environment(\.dismissAction, { dismiss() })
+    }
+}
 
 // Wrapper to provide a CompletionNotifying ViewController
-class DeliveryUncertaintyRecoveryViewController: UIHostingController<AnyView>, CompletionNotifying {
+class DeliveryUncertaintyRecoveryViewController: UIHostingController<_DeliveryUncertaintyRecoveryView>, CompletionNotifying {
     
     public weak var completionDelegate: CompletionDelegate?
     
     init(appName: String, uncertaintyStartedAt: Date, recoverCommsTapped: @escaping () -> Void) {
         
-        var dismiss = {}
+        var view = _DeliveryUncertaintyRecoveryView(
+            appName: appName,
+            uncertaintyStartedAt: uncertaintyStartedAt,
+            recoverCommsTapped: recoverCommsTapped
+        )
         
-        let view = DeliveryUncertaintyRecoveryView(appName: appName, uncertaintyStartedAt: uncertaintyStartedAt) {
-            recoverCommsTapped()
-            dismiss()
-        }
-        .environment(\.dismissAction, { dismiss() })
+        super.init(rootView: view)
         
-        super.init(rootView: AnyView(view))
-        
-        dismiss = {
+        view.dismiss = {
             self.completionDelegate?.completionNotifyingDidComplete(self)
         }
     }

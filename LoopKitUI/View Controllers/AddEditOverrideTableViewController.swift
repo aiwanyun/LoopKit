@@ -248,7 +248,7 @@ public final class AddEditOverrideTableViewController: UITableViewController {
             switch propertyRow(for: indexPath) {
             case .symbol:
                 let cell = tableView.dequeueReusableCell(withIdentifier: LabeledTextFieldTableViewCell.className, for: indexPath) as! LabeledTextFieldTableViewCell
-                cell.titleLabel.text = LocalizedString("象征", comment: "The text for the custom preset symbol setting")
+                cell.titleLabel.text = LocalizedString("标识", comment: "The text for the custom preset symbol setting")
                 cell.textField.text = symbol
                 cell.textField.placeholder = SettingsTableViewCell.NoValueString
                 cell.maximumTextLength = 2
@@ -259,7 +259,7 @@ public final class AddEditOverrideTableViewController: UITableViewController {
                 let cell = tableView.dequeueReusableCell(withIdentifier: LabeledTextFieldTableViewCell.className, for: indexPath) as! LabeledTextFieldTableViewCell
                 cell.titleLabel.text = LocalizedString("姓名", comment: "The text for the custom preset name setting")
                 cell.textField.text = name
-                cell.textField.placeholder = LocalizedString("跑步", comment: "The text for the custom preset name field placeholder")
+                cell.textField.placeholder = LocalizedString("运行", comment: "The text for the custom preset name field placeholder")
                 cell.delegate = self
                 return cell
             case .insulinNeeds:
@@ -391,12 +391,12 @@ public final class AddEditOverrideTableViewController: UITableViewController {
 
         switch inputMode {
         case .customizePresetOverride(let preset):
-            return String(format: LocalizedString("仅当您启用预设时，更改才会应用。 %@ 的默认设置不会受到影响。", comment: "Footer text for customizing from a preset (1: preset name)"), preset.name)
+            return String(format: LocalizedString("Changes will only apply this time you enable the preset. The default settings of %@ will not be affected.", comment: "Footer text for customizing from a preset (1: preset name)"), preset.name)
         case .editOverride(let override):
             guard case .preset(let preset) = override.context else {
                 return nil
             }
-            return String(format: LocalizedString("编辑仅持续到预设被禁用为止。 %@ 的默认设置不会受到影响。", comment: "Footer text for editing an enabled custom preset (1: preset name)"), preset.name)
+            return String(format: LocalizedString("Edits persist only until the preset is disabled. The default settings of %@ will not be affected.", comment: "Footer text for editing an enabled custom preset (1: preset name)"), preset.name)
         default:
             return nil
         }
@@ -472,7 +472,7 @@ extension AddEditOverrideTableViewController {
         case .newPreset, .editPreset, .editOverride:
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(save))
         case .customizePresetOverride, .customOverride:
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: LocalizedString("使能够", comment: "The button text for enabling a temporary override"), style: .done, target: self, action: #selector(save))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: LocalizedString("开启", comment: "The button text for enabling a temporary override"), style: .done, target: self, action: #selector(save))
         case .viewOverride: break
         }
 

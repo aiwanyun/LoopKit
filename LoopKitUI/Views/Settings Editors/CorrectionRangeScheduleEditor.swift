@@ -169,7 +169,7 @@ public struct CorrectionRangeScheduleEditor: View {
 
     private var confirmationAlertContent: AlertContent {
         AlertContent(
-            title: Text(LocalizedString("节省更正范围？", comment: "Alert title for confirming correction ranges outside the recommended range")),
+            title: Text(LocalizedString("保存更正范围？", comment: "Alert title for confirming correction ranges outside the recommended range")),
             message: Text(TherapySetting.glucoseTargetRange.guardrailSaveWarningCaption)
         )
     }

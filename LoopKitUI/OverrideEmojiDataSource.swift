@@ -11,7 +11,7 @@ func OverrideSymbolInputController() -> EmojiInputController {
 }
 
 
-private final class OverrideEmojiDataSource: EmojiDataSource {
+final class OverrideEmojiDataSource: EmojiDataSource {
 
     private static let activity = [
         "🚶‍♀️", "🚶‍♂️", "🏃‍♀️", "🏃‍♂️", "💃", "🕺",
@@ -52,7 +52,7 @@ private final class OverrideEmojiDataSource: EmojiDataSource {
                 indexSymbol: " 🏃‍♀️ "
             ),
             EmojiSection(
-                title: LocalizedString("健康）状况", comment: "The title for the custom preset emoji condition section"),
+                title: LocalizedString("状态", comment: "The title for the custom preset emoji condition section"),
                 items: type(of: self).condition,
                 indexSymbol: "🤒"
             ),

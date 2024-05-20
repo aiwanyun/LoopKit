@@ -70,7 +70,7 @@ public struct OverrideSelectionHistory: View {
                 }
             }
         }
-        .navigationBarTitle(Text(LocalizedString("超越历史", comment: "Title for override history view")), displayMode: .large)
+        .navigationBarTitle(Text(LocalizedString("覆盖历史记录", comment: "Title for override history view")), displayMode: .large)
     }
     
     private func makeTargetRangeText(from targetRange: ClosedRange<HKQuantity>) -> String {
@@ -106,7 +106,7 @@ public struct OverrideSelectionHistory: View {
         case .legacyWorkout:
             return OverrideViewCell(
                 symbol: Text("🏃‍♂️"),
-                name: Text("锻炼", comment: "Title for workout override history cell"),
+                name: Text("Workout", comment: "Title for workout override history cell"),
                 targetRange: Text(targetRange),
                 duration: Text(duration),
                 subtitle: Text(startTime),
@@ -114,7 +114,7 @@ public struct OverrideSelectionHistory: View {
         case .preMeal:
             return OverrideViewCell(
                 symbol: Text("🍽"),
-                name: Text("餐前模式", comment: "Title for pre-meal override history cell"),
+                name: Text("Pre-Meal", comment: "Title for pre-meal override history cell"),
                 targetRange: Text(targetRange),
                 duration: Text(duration),
                 subtitle: Text(startTime),
@@ -130,7 +130,7 @@ public struct OverrideSelectionHistory: View {
         case .custom:
             return OverrideViewCell(
                 symbol: Text("···"),
-                name: Text("风俗", comment: "Title for custom override history cell"),
+                name: Text("自定义", comment: "Title for custom override history cell"),
                 targetRange: Text(targetRange),
                 duration: Text(duration),
                 subtitle: Text(startTime),
@@ -141,9 +141,9 @@ public struct OverrideSelectionHistory: View {
     private func title(for override: TemporaryScheduleOverride) -> String {
         switch override.context {
         case .legacyWorkout:
-            return LocalizedString("🏃‍♂️锻炼", comment: "Workout override preset title")
+            return LocalizedString("🏃‍♂️ Workout", comment: "Workout override preset title")
         case .preMeal:
-            return LocalizedString("🍽前餐前", comment: "Premeal override preset title")
+            return LocalizedString("🍽 Pre-Meal", comment: "Premeal override preset title")
         case .preset(let preset):
             let symbol = preset.symbol
             let name = preset.name

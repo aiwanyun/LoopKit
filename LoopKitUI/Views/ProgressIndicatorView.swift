@@ -106,11 +106,11 @@ public struct ProgressIndicatorView: View {
     var accessibilityLabel: String {
         switch self.state {
         case .indeterminantProgress:
-            return LocalizedString("进展。", comment: "Accessibility label for ProgressIndicatorView when showIndeterminantProgress")
+            return LocalizedString("进行中.", comment: "Accessibility label for ProgressIndicatorView when showIndeterminantProgress")
         case .timedProgress:
             return String(format: LocalizedString("%1$d percent complete.", comment: "Format string for progress accessibility label (1: duration in seconds)"), Int((self.progress * 100).rounded()))
         case .completed:
-            return LocalizedString("完全的。", comment: "Accessibility label for ProgressIndicatorView when showIndeterminantProgress")
+            return LocalizedString("完成.", comment: "Accessibility label for ProgressIndicatorView when showIndeterminantProgress")
         case .hidden:
             return ""
         }

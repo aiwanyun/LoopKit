@@ -41,6 +41,7 @@ struct InsulinStatusView: View {
     }
 
     let basalRateFormatter = QuantityFormatter(for: .internationalUnitsPerHour)
+    let reservoirVolumeFormatter = QuantityFormatter(for: .internationalUnit())
 
     private var inNoDelivery: Bool {
         !viewModel.isDeliverySuspended && viewModel.basalDeliveryRate == nil
@@ -71,7 +72,7 @@ struct InsulinStatusView: View {
                 .font(.system(size: 34))
                 .fixedSize()
                 .foregroundColor(guidanceColors.warning)
-            Text("胰岛素\n暂停")
+            Text("Insulin\nSuspended")
                 .font(.system(size: 14, weight: .heavy, design: .default))
                 .lineSpacing(0.01)
                 .fixedSize()
@@ -99,9 +100,9 @@ struct InsulinStatusView: View {
                 }
                 Group {
                     if viewModel.isScheduledBasal {
-                        Text("预定\(String.nonBreakingSpace)基础率")
+                        Text("Scheduled\(String.nonBreakingSpace)Basal")
                     } else if viewModel.isTempBasal {
-                        Text("零时\(String.nonBreakingSpace)基础率")
+                        Text("Temporary\(String.nonBreakingSpace)Basal")
                     }
                 }
                 .font(.footnote)
@@ -116,7 +117,7 @@ struct InsulinStatusView: View {
                 .font(.system(size: 34))
                 .fixedSize()
                 .foregroundColor(guidanceColors.critical)
-            Text("没有\n送货")
+            Text("No\nDelivery")
                 .font(.system(size: 16, weight: .heavy, design: .default))
                 .lineSpacing(0.01)
                 .fixedSize()
@@ -134,7 +135,7 @@ struct InsulinStatusView: View {
     var reservoirStatus: some View {
         VStack(alignment: .trailing) {
             VStack(alignment: .leading, spacing: reservoirStatusSpacing) {
-                Text("胰岛素\(String.nonBreakingSpace)剩余")
+                Text("Insulin\(String.nonBreakingSpace)Remaining")
                     .foregroundColor(Color(UIColor.secondaryLabel))
                 HStack {
                     reservoirLevelStatus
@@ -158,12 +159,11 @@ struct InsulinStatusView: View {
                         .frame(width: 23, height: 34, alignment: .bottom)
                 }
                 HStack(alignment: .firstTextBaseline, spacing: 3) {
-                    Text("50")
+                    Text("50+")
                         .font(.system(size: 28))
                         .fontWeight(.heavy)
                         .fixedSize()
-                    let unit = HKUnit.internationalUnit()
-                    Text(basalRateFormatter.localizedUnitStringWithPlurality())
+                    Text(reservoirVolumeFormatter.localizedUnitStringWithPlurality())
                         .foregroundColor(.secondary)
                 }
             }

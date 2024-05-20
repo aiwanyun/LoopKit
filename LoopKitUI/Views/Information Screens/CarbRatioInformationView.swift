@@ -36,9 +36,8 @@ public struct CarbRatioInformationView: View {
     private var text: some View {
         VStack(alignment: .leading, spacing: 25) {
             Text(TherapySetting.carbRatio.descriptiveText(appName: appName))
-            Text(LocalizedString("您可以通过使用➕在一天中的不同时间添加不同的碳水系数。", comment: "Description of how to add a ratio"))
+            Text(LocalizedString("您可以通过使用➕在一天中的不同时间添加不同的碳水化合物比率。", comment: "Description of how to add a ratio"))
         }
         .accentColor(.secondary)
-        .foregroundColor(.accentColor)
     }
 }

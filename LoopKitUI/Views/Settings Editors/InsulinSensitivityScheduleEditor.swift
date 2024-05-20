@@ -67,7 +67,7 @@ public struct InsulinSensitivityScheduleEditor: View {
 
     private var confirmationAlertContent: AlertContent {
         AlertContent(
-            title: Text(LocalizedString("节省胰岛素敏感性？", comment: "Alert title for confirming insulin sensitivities outside the recommended range")),
+            title: Text(LocalizedString("保存胰岛素敏感性？", comment: "Alert title for confirming insulin sensitivities outside the recommended range")),
             message: Text(TherapySetting.insulinSensitivity.guardrailSaveWarningCaption)
         )
     }

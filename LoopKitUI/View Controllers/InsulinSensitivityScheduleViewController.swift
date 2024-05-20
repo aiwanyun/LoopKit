@@ -271,7 +271,7 @@ public class InsulinSensitivityScheduleViewController : DailyValueScheduleTableV
             return cell
         case .save:
             let cell = tableView.dequeueReusableCell(withIdentifier: TextButtonTableViewCell.className, for: indexPath) as! TextButtonTableViewCell
-            cell.textLabel?.text = LocalizedString("节省", comment: "Button text for saving insulin sensitivity schedule")
+            cell.textLabel?.text = LocalizedString("保存", comment: "Button text for saving insulin sensitivity schedule")
             cell.isEnabled = isScheduleModified && isScheduleValid
 
             return cell

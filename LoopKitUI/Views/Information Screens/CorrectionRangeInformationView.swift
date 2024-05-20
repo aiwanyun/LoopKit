@@ -27,19 +27,18 @@ public struct CorrectionRangeInformationView: View {
             onExit: onExit,
             mode: mode,
             appName: appName,
-            text: AnyView(text)
+            text: text
         )
     }
     
     private var text: some View {
         VStack(alignment: .leading, spacing: 25) {
-            Text(LocalizedString("如果您以前使用过CGM，则您可能熟悉目标范围作为葡萄糖通知警报所需的广泛值，例如70-180 mg/dl或90-200 mg/dl。", comment: "Information about target range"))
+            Text(LocalizedString("如果您以前使用过CGM，则您可能熟悉目标范围作为血糖通知警报所需的广泛值，例如70-180 mg/dl或90-200 mg/dl。", comment: "Information about target range"))
             Text(LocalizedString("校正范围不同。这将是一个较窄的范围。", comment: "Information about differences between target range and correction range"))
             .bold()
-            Text(String(format: LocalizedString("对于此范围，选择您希望 %1$@ 在调整基础胰岛素时达到的具体葡萄糖值（或值范围）。", comment: "Information about correction range format (1: app name)"), appName))
+            Text(String(format: LocalizedString("For this range, choose the specific glucose value (or range of values) that you want %1$@ to aim for in adjusting your basal insulin.", comment: "Information about correction range format (1: app name)"), appName))
             Text(LocalizedString("您的医疗保健提供者可以帮助您选择适合您的更正范围。", comment: "Disclaimer"))
         }
-        .foregroundColor(.secondary)
     }
 }
 

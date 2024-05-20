@@ -24,7 +24,7 @@ extension SettingsPresentationMode {
             if isSaving {
                 return LocalizedString("保存...", comment: "The button text during saving on a configuration page")
             } else {
-                return LocalizedString("节省", comment: "The button text for saving on a configuration page")
+                return LocalizedString("保存", comment: "The button text for saving on a configuration page")
             }
         }
     }

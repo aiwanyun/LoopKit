@@ -389,7 +389,7 @@ public struct DeliveryLimitsEditor: View {
                 message: content.message,
                 primaryButton: .cancel(
                     content.cancel ??
-                    Text(LocalizedString("回去", comment: "Button text to return to editing a schedule after from alert popup when some schedule values are outside the recommended range"))),
+                    Text(LocalizedString("回退.", comment: "Button text to return to editing a schedule after from alert popup when some schedule values are outside the recommended range"))),
                 secondaryButton: .default(
                     content.ok ??
                     Text(LocalizedString("继续", comment: "Button text to confirm saving from alert popup when some schedule values are outside the recommended range")),
@@ -408,7 +408,7 @@ public struct DeliveryLimitsEditor: View {
         AlertContent(
             title: Text(LocalizedString("保存递送限制？", comment: "Alert title for confirming delivery limits outside the recommended range")),
             message: Text(TherapySetting.deliveryLimits.guardrailSaveWarningCaption),
-            cancel: Text(LocalizedString("回去", comment: "Text for go back action on confirmation alert")),
+            cancel: Text(LocalizedString("回退.", comment: "Text for go back action on confirmation alert")),
             ok: Text(LocalizedString("继续", comment: "Text for continue action on confirmation alert")
             )
         )
@@ -447,7 +447,7 @@ struct DeliveryLimitsGuardrailWarning: View {
         case 2:
             return GuardrailWarning(
                 therapySetting: .deliveryLimits,
-                title: Text(LocalizedString("输入限制", comment: "Title text for crossed thresholds guardrail warning")),
+                title: Text(LocalizedString("交互限制", comment: "Title text for crossed thresholds guardrail warning")),
                 thresholds: Array(crossedThresholds.values))
         default:
             preconditionFailure("Unreachable: only two delivery limit settings exist")

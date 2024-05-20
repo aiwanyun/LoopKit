@@ -8,8 +8,8 @@
 /* Class = "UILabel"; text = "g"; ObjectID = "D2S-2h-yH6"; */
 "D2S-2h-yH6.text" = "g";
 
-/* Class = "UILabel"; text = "总量"; ObjectID = "K0S-my-3qL"; */
-"K0S-my-3qL.text" = "总量";
+/* Class = "UILabel"; text = "Amount Consumed"; ObjectID = "K0S-my-3qL"; */
+"K0S-my-3qL.text" = "Amount Consumed";
 
 /* Class = "UIButton"; normalTitle = "🍽"; ObjectID = "Mde-by-DTA"; */
 "Mde-by-DTA.normalTitle" = "🍽";
@@ -17,8 +17,8 @@
 /* Class = "UIButton"; normalTitle = "🌮"; ObjectID = "Me5-3D-C34"; */
 "Me5-3D-C34.normalTitle" = "🌮";
 
-/* Class = "UILabel"; text = "食物类型"; ObjectID = "NRZ-dT-iqj"; */
-"NRZ-dT-iqj.text" = "食物类型";
+/* Class = "UILabel"; text = "Food Type"; ObjectID = "NRZ-dT-iqj"; */
+"NRZ-dT-iqj.text" = "Food Type";
 
 /* Class = "UILabel"; text = "g COB"; ObjectID = "QZb-e1-xwb"; */
 "QZb-e1-xwb.text" = "g COB";
@@ -35,8 +35,8 @@
 /* Class = "UINavigationItem"; title = "Add/Edit Carb Entry"; ObjectID = "bM2-yI-YmX"; */
 "bM2-yI-YmX.title" = "Add/Edit Carb Entry";
 
-/* Class = "UILabel"; text = "食物类型"; ObjectID = "bdP-2A-DB8"; */
-"bdP-2A-DB8.text" = "食物类型";
+/* Class = "UILabel"; text = "Food Type"; ObjectID = "bdP-2A-DB8"; */
+"bdP-2A-DB8.text" = "Food Type";
 
 /* Class = "UIButton"; normalTitle = "🍕"; ObjectID = "dyX-Zv-8wU"; */
 "dyX-Zv-8wU.normalTitle" = "🍕";

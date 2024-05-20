@@ -43,7 +43,7 @@ public struct GuardrailConstrainedQuantityRangeView: View {
         HStack {
             lowerBoundView
 
-            Text(" - ")
+            Text("–")
                 .foregroundColor(Color(.secondaryLabel))
 
             upperBoundView

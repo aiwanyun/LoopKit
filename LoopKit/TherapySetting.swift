@@ -36,19 +36,19 @@ public extension TherapySetting {
         case .glucoseTargetRange:
             return LocalizedString("更正范围", comment: "Title text for glucose target range")
         case .preMealCorrectionRangeOverride:
-            return String(format: LocalizedString("%@ 范围", comment: "Format for correction range override therapy setting card"), CorrectionRangeOverrides.Preset.preMeal.title)
+            return String(format: LocalizedString("%@ Range", comment: "Format for correction range override therapy setting card"), CorrectionRangeOverrides.Preset.preMeal.title)
         case .workoutCorrectionRangeOverride:
-            return String(format: LocalizedString("%@ 范围", comment: "Format for correction range override therapy setting card"), CorrectionRangeOverrides.Preset.workout.title)
+            return String(format: LocalizedString("%@ Range", comment: "Format for correction range override therapy setting card"), CorrectionRangeOverrides.Preset.workout.title)
         case .suspendThreshold:
-            return LocalizedString("葡萄糖安全限制", comment: "Title text for glucose safety limit")
+            return LocalizedString("血糖安全限制", comment: "Title text for glucose safety limit")
         case .basalRate:
             return LocalizedString("基础率", comment: "Title text for basal rates")
         case .deliveryLimits:
-            return LocalizedString("输入限制", comment: "Title text for delivery limits")
+            return LocalizedString("交互限制", comment: "Title text for delivery limits")
         case .insulinModel:
             return LocalizedString("胰岛素模型", comment: "Title text for fast acting insulin model")
         case .carbRatio:
-            return LocalizedString("碳水系数", comment: "Title text for carb ratios")
+            return LocalizedString("碳水化合物比率", comment: "Title text for carb ratios")
         case .insulinSensitivity:
             return LocalizedString("胰岛素敏感性", comment: "Title text for insulin sensitivity")
         case .none:
@@ -66,23 +66,23 @@ public extension TherapySetting {
     func descriptiveText(appName: String) -> String {
         switch self {
         case .glucoseTargetRange:
-            return String(format: LocalizedString("校正范围是您希望 %1$@ 调整您的基础胰岛素并帮助您计算推注剂量时所要达到的葡萄糖值（或值范围）。", comment: "Descriptive text for glucose target range (1: app name)"), appName)
+            return String(format: LocalizedString("Correction Range is the glucose value (or range of values) that you want %1$@ to aim for in adjusting your basal insulin and helping you calculate your boluses.", comment: "Descriptive text for glucose target range (1: app name)"), appName)
         case .preMealCorrectionRangeOverride:
-            return LocalizedString("进餐前会暂时降低葡萄糖靶标，以撞击圆环后的葡萄糖峰值。", comment: "Descriptive text for pre-meal correction range override")
+            return LocalizedString("进餐前会暂时降低血糖靶标，以撞击圆环后的血糖峰值。", comment: "Descriptive text for pre-meal correction range override")
         case .workoutCorrectionRangeOverride:
-            return LocalizedString("在体育锻炼之前，期间或之后，暂时提高葡萄糖靶标，以降低低血糖事件的风险。", comment: "Descriptive text for workout correction range override")
+            return LocalizedString("在体育锻炼之前，期间或之后，暂时提高血糖靶标，以降低低血糖事件的风险。", comment: "Descriptive text for workout correction range override")
         case .suspendThreshold:
-            return String(format: LocalizedString("仅当您的血糖预计在接下来的三个小时内高于此限制时，%1$@ 才会提供基础胰岛素并建议推注胰岛素。", comment: "Descriptive format string for glucose safety limit (1: app name)"), appName)
+            return String(format: LocalizedString("%1$@ will deliver basal and recommend bolus insulin only if your glucose is predicted to be above this limit for the next three hours.", comment: "Descriptive format string for glucose safety limit (1: app name)"), appName)
         case .basalRate:
             return LocalizedString("您的基础胰岛素速率是您要使用的单位数量来满足背景胰岛素需求。", comment: "Descriptive text for basal rate")
         case .deliveryLimits:
             return "\(DeliveryLimits.Setting.maximumBasalRate.localizedDescriptiveText(appName: appName))\n\n\(DeliveryLimits.Setting.maximumBolus.localizedDescriptiveText(appName: appName))"
         case .insulinModel:
-            return String(format: LocalizedString("对于速效胰岛素，%1$@ 假设其有效工作 6 小时。 您可以根据高峰活动选择不同的型号。", comment: "Descriptive text for fast acting insulin model (1: app name)"), appName)
+            return String(format: LocalizedString("For fast acting insulin, %1$@ assumes it is actively working for 6 hours. You can choose from different models for the peak activity.", comment: "Descriptive text for fast acting insulin model (1: app name)"), appName)
         case .carbRatio:
             return LocalizedString("您的碳水化合物比是一个单位胰岛素覆盖的碳水化合物的克数。", comment: "Descriptive text for carb ratio")
         case .insulinSensitivity:
-            return LocalizedString("您的胰岛素敏感性是指一个单位胰岛素预期的葡萄糖下降。", comment: "Descriptive text for insulin sensitivity")
+            return LocalizedString("您的胰岛素敏感性是指一个单位胰岛素预期的血糖下降。", comment: "Descriptive text for insulin sensitivity")
         case .none:
             return ""
         }

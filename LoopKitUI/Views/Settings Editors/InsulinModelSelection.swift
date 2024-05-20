@@ -177,7 +177,7 @@ public struct InsulinModelSelection: View {
         let spellOutFormatter = NumberFormatter()
         spellOutFormatter.numberStyle = .spellOut
         let modelCountString = spellOutFormatter.string(from: selectableInsulinModelSettings.count as NSNumber)!
-        return Text(String(format: LocalizedString("对于速效胰岛素，%1$@ 假设其有效工作 6 小时。 您可以从 %2$@ 不同的模型中进行选择，了解应用程序如何测量胰岛素的峰值活性。", comment: "Insulin model setting description (1: app name) (2: number of models)"), appName, modelCountString))
+        return Text(String(format: LocalizedString("For fast acting insulin, %1$@ assumes it is actively working for 6 hours. You can choose from %2$@ different models for how the app measures the insulin’s peak activity.", comment: "Insulin model setting description (1: app name) (2: number of models)"), appName, modelCountString))
     }
 
     var selectableInsulinModelSettings: [ExponentialInsulinModelPreset] {

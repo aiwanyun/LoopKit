@@ -87,7 +87,7 @@ extension ConfigurationPage {
     ) {
         self.init(
             title: title,
-            actionButtonTitle: Text(LocalizedString("节省", comment: "The button text for saving on a configuration page")),
+            actionButtonTitle: Text(LocalizedString("保存", comment: "The button text for saving on a configuration page")),
             actionButtonState: saveButtonState,
             cards: cards,
             actionAreaContent: actionAreaContent,
@@ -105,7 +105,7 @@ extension ConfigurationPage {
     ) {
         self.init(
             title: title,
-            actionButtonTitle: Text(LocalizedString("节省", comment: "The button text for saving on a configuration page")),
+            actionButtonTitle: Text(LocalizedString("保存", comment: "The button text for saving on a configuration page")),
             actionButtonState: saveButtonState,
             cardListStyle: .sectioned(sections),
             actionAreaContent: actionAreaContent(),

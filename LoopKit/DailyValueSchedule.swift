@@ -1,5 +1,5 @@
 //
-//  QuantitySchedule.swift
+//  DailyValueSchedule.swift
 //  Naterade
 //
 //  Created by Nathan Racklyeft on 1/18/16.
@@ -36,6 +36,12 @@ public struct AbsoluteScheduleValue<T>: TimelineValue {
     public let startDate: Date
     public let endDate: Date
     public let value: T
+
+    public init(startDate: Date, endDate: Date, value: T) {
+        self.startDate = startDate
+        self.endDate = endDate
+        self.value = value
+    }
 }
 
 extension AbsoluteScheduleValue: Equatable where T: Equatable {}
@@ -282,4 +288,7 @@ extension DailyValueSchedule {
             && lhs.items.count == rhs.items.count
             && Swift.zip(lhs.items, rhs.items).allSatisfy(==)
     }
+}
+
+extension AbsoluteScheduleValue: Codable where T: Codable {
 }

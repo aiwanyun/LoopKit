@@ -240,7 +240,7 @@ struct ScheduleEditor<Value: Equatable, ValueContent: View, ValuePicker: View, A
     }
     
     private var unsupportedValueWarning: some View {
-        WarningView(title: Text("不支持 \(title)"),
+        WarningView(title: Text("Unsupported \(title)"),
                     caption: Text(LocalizedString("更正突出显示的无支撑值。", comment: "Instruction to correct unsupported value")))
     }
 
@@ -450,7 +450,7 @@ struct ScheduleEditor<Value: Equatable, ValueContent: View, ValuePicker: View, A
             return Alert(
                 title: content.title,
                 message: content.message,
-                primaryButton: .cancel(Text(LocalizedString("回去", comment: "Button text to return to editing a schedule after from alert popup when some schedule values are outside the recommended range"))),
+                primaryButton: .cancel(Text(LocalizedString("回退.", comment: "Button text to return to editing a schedule after from alert popup when some schedule values are outside the recommended range"))),
                 secondaryButton: .default(
                     Text(LocalizedString("继续", comment: "Button text to confirm saving from alert popup when some schedule values are outside the recommended range")),
                     action: startSaving

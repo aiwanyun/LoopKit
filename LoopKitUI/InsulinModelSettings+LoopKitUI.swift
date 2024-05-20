@@ -50,7 +50,7 @@ public extension WalshInsulinModel {
     }
 
     static var subtitle: String {
-        return LocalizedString("循环使用的旧模型，允许自定义动作持续时间。", comment: "Subtitle description of Walsh insulin model setting")
+        return LocalizedString("闭环使用的旧模型，允许自定义动作持续时间。", comment: "Subtitle description of Walsh insulin model setting")
     }
     
     var subtitle: String {

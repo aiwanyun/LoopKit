@@ -106,7 +106,7 @@ public struct BasalRateScheduleEditor: View {
 
     private var confirmationAlertContent: AlertContent {
         AlertContent(
-            title: Text(LocalizedString("节省基础费率？", comment: "Alert title for confirming basal rates outside the recommended range")),
+            title: Text(LocalizedString("保存基础费率？", comment: "Alert title for confirming basal rates outside the recommended range")),
             message: Text(TherapySetting.basalRate.guardrailSaveWarningCaption)
         )
     }

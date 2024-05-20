@@ -80,7 +80,7 @@ public struct CarbRatioScheduleEditor: View {
 
     private var confirmationAlertContent: AlertContent {
         AlertContent(
-            title: Text(LocalizedString("节省碳水化合物比？", comment: "Alert title for confirming carb ratios outside the recommended range")),
+            title: Text(LocalizedString("保存碳水化合物比？", comment: "Alert title for confirming carb ratios outside the recommended range")),
             message: Text(TherapySetting.carbRatio.guardrailSaveWarningCaption)
         )
     }
@@ -108,6 +108,6 @@ private struct CarbRatioGuardrailWarning: View {
     }
 
     private var multipleWarningTitle: Text {
-        Text(LocalizedString("碳水系数", comment: "Title text for multi-value carb ratio warning"))
+        Text(LocalizedString("碳水化合物比率", comment: "Title text for multi-value carb ratio warning"))
     }
 }

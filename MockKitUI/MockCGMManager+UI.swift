@@ -29,8 +29,8 @@ extension MockCGMManager: CGMManagerUI {
     }
 
     public func settingsViewController(bluetoothProvider: BluetoothProvider, displayGlucosePreference: DisplayGlucosePreference, colorPalette: LoopUIColorPalette, allowDebugFeatures: Bool) -> CGMManagerViewController {
-        let settings = MockCGMManagerSettingsView(cgmManager: self, displayGlucosePreference: displayGlucosePreference, appName: appName)
-        let hostingController = DismissibleHostingController(rootView: settings, colorPalette: colorPalette)
+        let settings = MockCGMManagerSettingsView(cgmManager: self, displayGlucosePreference: displayGlucosePreference, appName: appName, allowDebugFeatures: allowDebugFeatures)
+        let hostingController = DismissibleHostingController(content: settings, isModalInPresentation: false, colorPalette: colorPalette)
         hostingController.navigationItem.backButtonDisplayMode = .generic
         let nav = CGMManagerSettingsNavigationViewController(rootViewController: hostingController)
         nav.navigationBar.prefersLargeTitles = true

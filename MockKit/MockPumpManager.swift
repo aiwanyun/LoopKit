@@ -40,12 +40,7 @@ public enum MockPumpManagerError: LocalizedError {
 }
 
 public final class MockPumpManager: TestingPumpManager {
-
-    public static let managerIdentifier = "MockPumpManager"
-
-    public var managerIdentifier: String {
-        return MockPumpManager.managerIdentifier
-    }
+    public static let pluginIdentifier = "MockPumpManager"
     
     public static let localizedTitle = "Pump Simulator"
     
@@ -70,7 +65,7 @@ public final class MockPumpManager: TestingPumpManager {
     }
 
     private static let device = HKDevice(
-        name: MockPumpManager.managerIdentifier,
+        name: MockPumpManager.pluginIdentifier,
         manufacturer: nil,
         model: nil,
         hardwareVersion: nil,
@@ -405,7 +400,7 @@ public final class MockPumpManager: TestingPumpManager {
         state.finalizeFinishedDoses()
         let pendingPumpEvents = state.pumpEventsToStore
         delegate.notify { (delegate) in
-            delegate?.pumpManager(self, hasNewPumpEvents: pendingPumpEvents, lastReconciliation: self.lastSync) { error in
+            delegate?.pumpManager(self, hasNewPumpEvents: pendingPumpEvents, lastReconciliation: self.lastSync, replacePendingEvents: true) { error in
                 if error == nil {
                     self.state.additionalPumpEvents = []
                 }
@@ -566,7 +561,7 @@ public final class MockPumpManager: TestingPumpManager {
 
 
             let suspendDate = Date()
-            let suspend = UnfinalizedDose(suspendStartTime: suspendDate)
+            let suspend = UnfinalizedDose(suspendStartTime: suspendDate, automatic: false)
             self.state.finalizedDoses.append(suspend)
             self.state.suspendState = .suspended(suspendDate)
             logDeviceComms(.receive, message: "Suspend accepted")
@@ -587,7 +582,7 @@ public final class MockPumpManager: TestingPumpManager {
             completion(error)
         } else {
             let resumeDate = Date()
-            let resume = UnfinalizedDose(resumeStartTime: resumeDate, insulinType: state.insulinType)
+            let resume = UnfinalizedDose(resumeStartTime: resumeDate, insulinType: state.insulinType, automatic: false)
             self.state.finalizedDoses.append(resume)
             self.state.suspendState = .resumed(resumeDate)
             storePumpEvents { (error) in
@@ -602,7 +597,7 @@ public final class MockPumpManager: TestingPumpManager {
     public func injectPumpEvents(_ pumpEvents: [NewPumpEvent]) {
         // directly report these pump events
         delegate.notify { delegate in
-            delegate?.pumpManager(self, hasNewPumpEvents: pumpEvents, lastReconciliation: Date()) { _ in }
+            delegate?.pumpManager(self, hasNewPumpEvents: pumpEvents, lastReconciliation: Date(), replacePendingEvents: true) { _ in }
         }
     }
     

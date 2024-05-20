@@ -147,7 +147,7 @@ public final class GlucoseStore {
         healthKitSampleStore: HealthKitSampleStore? = nil,
         cacheStore: PersistenceController,
         cacheLength: TimeInterval = 60 /* minutes */ * 60 /* seconds */,
-        momentumDataInterval: TimeInterval = 15 /* minutes */ * 60 /* seconds */,
+        momentumDataInterval: TimeInterval = GlucoseMath.momentumDataInterval,
         provenanceIdentifier: String
     ) {
         let cacheLength = max(cacheLength, momentumDataInterval)
@@ -713,18 +713,17 @@ extension GlucoseStore {
     /// This operation is performed asynchronously and the completion will be executed on an arbitrary background queue.
     ///
     /// - Parameters:
+    ///   - date: A Date object representing the end of the momentumDataInterval used to fetch glucose samples for calculating momentum.  If nil, the current date is used.
     ///   - completion: A closure called once the calculation has completed.
     ///   - result: The calculated effect values, or an empty array if the glucose data isn't suitable for momentum calculation, or error.
-    public func getRecentMomentumEffect(_ completion: @escaping (_ result: Result<[GlucoseEffect], Error>) -> Void) {
-        getGlucoseSamples(start: Date(timeIntervalSinceNow: -momentumDataInterval)) { (result) in
+    public func getRecentMomentumEffect(for date: Date? = nil, _ completion: @escaping (_ result: Result<[GlucoseEffect], Error>) -> Void) {
+
+        getGlucoseSamples(start: (date ?? Date()).addingTimeInterval(-momentumDataInterval)) { (result) in
             switch result {
             case .failure(let error):
                 completion(.failure(error))
             case .success(let samples):
-                let effects = samples.linearMomentumEffect(
-                    duration: self.momentumDataInterval,
-                    delta: TimeInterval(minutes: 5)
-                )
+                let effects = samples.linearMomentumEffect()
                 completion(.success(effects))
             }
         }

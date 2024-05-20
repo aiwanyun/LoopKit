@@ -166,7 +166,7 @@ public final class OverrideSelectionViewController: UICollectionViewController, 
 
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let customSymbol = "⋯"
-        let customName = LocalizedString("风俗", comment: "The text for a custom preset")
+        let customName = LocalizedString("自定义", comment: "The text for a custom preset")
         let historyLabel = LocalizedString("历史", comment: "The text for the override history")
 
         switch cellContent(for: indexPath) {
@@ -286,7 +286,7 @@ public final class OverrideSelectionViewController: UICollectionViewController, 
                 )
                 let overrideHistoryView = OverrideSelectionHistory(model: model)
                 let hostedView = UIHostingController(rootView: overrideHistoryView)
-                hostedView.title = LocalizedString("超越历史", comment: "Title for override history view") // Hack to fix animations
+                hostedView.title = LocalizedString("覆盖历史记录", comment: "Title for override history view") // Hack to fix animations
                 navigationController?.pushViewController(hostedView, animated: true)
             }
         }

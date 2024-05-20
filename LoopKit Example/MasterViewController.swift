@@ -99,7 +99,7 @@ class MasterViewController: UITableViewController {
             case .basalRate:
                 cell.textLabel?.text = NSLocalizedString("基础率", comment: "The title text for the basal rate schedule")
             case .carbRatio:
-                cell.textLabel?.text = NSLocalizedString("碳水系数", comment: "The title of the carb ratios schedule screen")
+                cell.textLabel?.text = NSLocalizedString("碳水化合物比率", comment: "The title of the carb ratios schedule screen")
             case .correctionRange:
                 cell.textLabel?.text = NSLocalizedString("更正范围", comment: "The title text for the glucose correction range schedule")
             case .insulinSensitivity:
@@ -112,7 +112,7 @@ class MasterViewController: UITableViewController {
             case .carbs:
                 cell.textLabel?.text = NSLocalizedString("碳水化合物", comment: "The title for the cell navigating to the carbs screen")
             case .reservoir:
-                cell.textLabel?.text = NSLocalizedString("水库", comment: "The title for the cell navigating to the reservoir screen")
+                cell.textLabel?.text = NSLocalizedString("储液器", comment: "The title for the cell navigating to the reservoir screen")
             case .diagnostic:
                 cell.textLabel?.text = NSLocalizedString("诊断", comment: "The title for the cell displaying diagnostic data")
             case .generate:
@@ -163,7 +163,7 @@ class MasterViewController: UITableViewController {
                 let scheduleVC = DailyQuantityScheduleTableViewController()
 
                 scheduleVC.delegate = self
-                scheduleVC.title = NSLocalizedString("碳水系数", comment: "The title of the carb ratios schedule screen")
+                scheduleVC.title = NSLocalizedString("碳水化合物比率", comment: "The title of the carb ratios schedule screen")
                 scheduleVC.unit = .gram()
 
                 if let schedule = dataManager?.carbRatioSchedule {
@@ -184,7 +184,7 @@ class MasterViewController: UITableViewController {
                 })
                     .environmentObject(DisplayGlucosePreference(displayGlucoseUnit: .milligramsPerDeciliter))
 
-                let scheduleVC = DismissibleHostingController(rootView: view, dismissalMode: .pop(to:  type(of: self)), isModalInPresentation: false)
+                let scheduleVC = DismissibleHostingController(content: view, dismissalMode: .pop(to:  type(of: self)), isModalInPresentation: false)
                 show(scheduleVC, sender: sender)
             case .insulinSensitivity:
                 let unit = dataManager?.insulinSensitivitySchedule?.unit ?? HKUnit.milligramsPerDeciliter
